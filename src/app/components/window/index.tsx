@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export const Window = ({ children }: { children: React.ReactNode }) => {
 
     return (
@@ -10,7 +12,12 @@ export const Window = ({ children }: { children: React.ReactNode }) => {
                     <div className="border border-solid border-black h-3 w-3"></div>
                 </div>
                 <div className="bg-w95-grey h-4 w-4 flex items-center p-0.5">
-                    <img src="/images/x_icon.svg" alt="X" />
+                    <Image 
+                        src="/images/x_icon.svg" 
+                        alt="X" 
+                        width={16}
+                        height={16}
+                    />
                 </div>
             </div>
             <div className="bg-white">
