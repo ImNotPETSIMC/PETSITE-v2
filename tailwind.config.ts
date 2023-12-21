@@ -11,6 +11,9 @@ const config: Config = {
       colors: {
         'w95-grey': "#D9D9D9"
       },
+      fontFamily: {
+        monda: ['var(--font-monda)']
+      }
     },
   },
   plugins: [],
