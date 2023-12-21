@@ -12,7 +12,9 @@ const config: Config = {
         'w95-grey': "#D9D9D9"
       },
       fontFamily: {
-        monda: ['var(--font-monda)']
+        monda: ['var(--font-monda)'],
+        ps2p: ['var(--font-ps2p)'],
+        monoton: ['var(--font-monoton)']
       }
     },
   },
