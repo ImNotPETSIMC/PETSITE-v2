@@ -7,7 +7,7 @@ export const NavBar = () => {
             url: "/",
             name: "Home",
             icon: {
-                src: "/images/desktop_icon.png",
+                src: "/images/home_icon.png",
                 alt: "Home Icon",
                 width: 24,
                 height: 24
