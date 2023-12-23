@@ -14,7 +14,7 @@ export const NavBar = () => {
             }
         },
         {
-            url: "/news",
+            url: "/pages/news",
             name: "Notícias",
             icon: {
                 src: "/images/news_icon.png",
@@ -24,7 +24,7 @@ export const NavBar = () => {
             }
         },
         {
-            url: "/projects",
+            url: "/pages/projects",
             name: "Projetos",
             icon: {
                 src: "/images/projects_icon.png",
@@ -34,7 +34,7 @@ export const NavBar = () => {
             }
         },
         {
-            url: "/members",
+            url: "/pages/members",
             name: "Membros",
             icon: {
                 src: "/images/members_icon.png",
@@ -44,7 +44,7 @@ export const NavBar = () => {
             }
         },
         {
-            url: "/history",
+            url: "/pages/history",
             name: "História",
             icon: {
                 src: "/images/history_icon.png",
@@ -54,7 +54,7 @@ export const NavBar = () => {
             }
         },
         {
-            url: "/about",
+            url: "/pages/about",
             name: "Sobre",
             icon: {
                 src: "/images/about_icon.png",
@@ -64,7 +64,7 @@ export const NavBar = () => {
             }
         },
         {
-            url: "/contact",
+            url: "/pages/contact",
             name: "Contato",
             icon: {
                 src: "/images/contact_icon.png",
