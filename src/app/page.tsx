@@ -1,11 +1,14 @@
+'use client';
+
 import './globals.css';
 
 import Image from 'next/image';
 import { Window } from './components/window';
 import { monda, monoton, ps2p } from './fonts';
 import { NavBar } from './components/nav_bar';
-import { aboutPETSIMC } from './assets/texts';
+import { aboutPetsimc, joinPetsimc, objectivesPetsimc, pillarsPetsimc } from './assets/texts';
 import { FolderButton, FolderButtonProps } from './components/folder_button';
+import { useState } from 'react';
 
 const Home = () => {
   const FolderButtons : FolderButtonProps[] = [ 
@@ -75,17 +78,30 @@ const Home = () => {
           height: 75 
       }
     }
-  ]
+  ];
+
+  type InfoText = { title: string; content: string; };
+
+  const InfoTexts : Record<string, InfoText> = {
+    "about": { title: "Sobre o PET-SIMC", content: aboutPetsimc },
+    "objectives": { title: "Objetivos do PET-SIMC", content: objectivesPetsimc }, 
+    "join": { title: "Juntar-se ao PET-SIMC", content: joinPetsimc },
+    "pillars": { title: "Pilares do PET-SIMC", content: pillarsPetsimc },
+    "edict": { title: "Edital PET-SIMC", content: "Em Construção" },
+    "results": { title: "Resultados do Edital PET-SIMC", content: "Em Construção" }
+  };
+
+  const [infoText, setInfoText] = useState<InfoText>(InfoTexts["about"]);
 
   return (
     <main className={`${monda.variable} ${ps2p.variable} ${monoton.variable} font-monda p-5`}>
       <div className='flex gap-10'>
         <NavBar />
 
-        <div className='flex flex-wrap'>
+        <div className='flex flex-wrap gap-2'>
           <div className='flex gap-5 -translate-x-2 basis-full'>
             <Window>
-              <div className='font-monoton p-20 px-30 text-8xl text-[#593CFA]'> PET-SIMC </div>
+              <div className='font-monoton py-20 2xl:px-56 px-16 text-8xl text-[#593CFA]'> PET-SIMC </div>
             </Window>
             
             <div className='translate-y-5'>
@@ -93,8 +109,8 @@ const Home = () => {
                 <div className='p-10'>
                   <Image 
                     src="/images/pet_logo.png"
-                    width={200}
-                    height={200}
+                    width={300}
+                    height={300}
                     alt="PET-SIMC's Logo"
                     style={{ mixBlendMode: "multiply" }}
                   />  
@@ -103,16 +119,16 @@ const Home = () => {
             </div>
           </div>
 
-          <div className='z-10 w-10/12 max-w-[60rem]'>
+          <div className='z-10 w-10/12 max-w-[80rem]'>
             <Window>
               <div className='flex'>
-                <div className='p-8 flex flex-col gap-4 max-w-xl'>
-                  <h1 className='font-ps2p text-3xl max-w-lg'>Sobre o PET-SIMC</h1>
-                  <p className='max-w-md'>{aboutPETSIMC}</p>
+                <div className='py-8 px-12 flex flex-col gap-4 max-w-xl'>
+                  <h1 className='font-ps2p text-3xl max-w-lg'>{infoText.title}</h1>
+                  <p className='max-w-md'>{infoText.content}</p>
                 </div>
                 
-                <div className='flex grow items-center flex-wrap gap-2 py-20 justify-center'>
-                  {FolderButtons.map((element : FolderButtonProps) => { return <FolderButton key={element.id} {...element} />})}
+                <div className='flex grow items-center flex-wrap gap-1 py-20 justify-center'>
+                  {FolderButtons.map((element : FolderButtonProps) => { return <FolderButton key={element.id} {...element} onclick={() => setInfoText(InfoTexts[element.id])} />})}
                 </div>
               </div>
             </Window>
