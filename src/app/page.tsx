@@ -101,10 +101,10 @@ const Home = () => {
         <div className='flex flex-wrap gap-2'>
           <div className='flex gap-5 -translate-x-2 basis-full'>
             <Window>
-              <div className='font-monoton py-20 2xl:px-56 px-16 text-8xl text-[#593CFA]'> PET-SIMC </div>
+              <div className='font-monoton 2xl:py-28 2xl:px-56 py-20 px-16 text-8xl text-[#593CFA]'> PET-SIMC </div>
             </Window>
             
-            <div className='translate-y-5'>
+            <div className='translate-y-10'>
               <Window>
                 <div className='p-10'>
                   <Image 

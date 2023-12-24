@@ -76,7 +76,7 @@ export const NavBar = () => {
     ]
     
     return (
-        <div className="h-full">
+        <div className="h-full sticky top-4 z-10">
             <Window>
                 <nav className='p-2 flex flex-col gap-2 justify-between'>
                     {NavItems.map((element : NavItemProps) => { return <NavItem key={element.url} {...element} />})}
