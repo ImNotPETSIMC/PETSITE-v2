@@ -76,13 +76,13 @@ export const NavBar = () => {
     ]
     
     return (
-        <>
+        <div>
             <Window>
                 <nav className='p-2 flex flex-col gap-2'>
                     {NavItems.map((element : NavItemProps) => { return <NavItem key={element.url} {...element} />})}
                 </nav>
             </Window>
-        </>
+        </div>
     )
 
 }
