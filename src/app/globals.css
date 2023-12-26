@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: fixed;
     background-image: url('./assets/pattern.png'), linear-gradient(#9880F3FF, #1B0E4FD9);
