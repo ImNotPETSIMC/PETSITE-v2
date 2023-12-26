@@ -1,9 +1,13 @@
+'use client';
+
 import Image from "next/image"
+import { MouseEventHandler } from "react";
 
 export type FolderButtonProps = {
     name: string,
     title: string, 
     id: string, 
+    onclick?: MouseEventHandler<HTMLLabelElement>, 
     icon: { 
         src: string,  
         alt: string, 
@@ -15,7 +19,7 @@ export type FolderButtonProps = {
 export const FolderButton = (props: FolderButtonProps) => {
     return (
         <>
-            <label htmlFor={props.id} className="font-ps2p text-xs basis-1/4">
+            <label htmlFor={props.id} className="font-ps2p text-xs basis-1/4" onClick={props.onclick}>
                 <div className="flex flex-col gap-2 items-center">
                     <Image {...props.icon} />
                     <p>{props.title}</p>
