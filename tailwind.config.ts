@@ -9,6 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        'w95-dark-grey': "#9E9E9E",
+        'w95-darker-grey': "#C0C0C0",
         'w95-grey': "#D9D9D9",
         'w95-light-grey': "#ECE9E9",
         'w95-purple': "#593CFA"
