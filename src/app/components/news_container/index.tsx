@@ -1,133 +1,59 @@
 import Image from "next/image"
-import { useEffect, useState } from "react";
-import { CarouselRadioButton } from "./CarouselRadioButton";
 import { cropText } from "@/app/helpers/cropText";
+import { useId } from "react";
+import { Window } from "../window";
 
-export type NewsArticle = {   
+export type Article = {
   title: string
-  content: string, 
   date: string,
-  id: string, 
-  icon: { 
-    src: string,  
+  content: string,
+  id: string,
+  icon: {
+    src: string,
     alt: string
-  }   
+  }
+  loading?: true
 }
 
 export type NewsContainerProps = {
-  news: NewsArticle[]
+  news: Article
 }
 
 export const NewsContainer = (props: NewsContainerProps) => {
-  if(!props.news.length) {
-    return (
-      <>
-        <div className='flex'>
-          <div className='flex flex-col max-w-xl p-8 gap-8'>
-            <div>
-              <h1 className='font-ps2p text-2xl max-w-md'>Notícias Não Encontradas</h1>
-              <h2 className='font-ps2p text-xs max-w-md text-black/50'>Error - Falha de Comunicação</h2>
-            </div>
-            <p className='max-w-md'>No momento não conseguimos nos conectar ao banco de notícias do PET-SIMC. Caso sua internet esteja funcionando normalmente, favor entrar em contato com um membro do PET-SIMC informando o erro.</p>
-          </div>
-            
-          <div className='flex flex-col p-8 gap-8 justify-center'>
-            <Image 
-              src={"/images/ufu.jpg"}
-              alt={"Logo do PET-SIMC"}
-              width={400}
-              height={200}
-              className='aspect-video max-w-xl blur-sm'
-            />
+  const checkBoxId = useId();
 
-            <div className="flex items-center justify-between px-2">
-              <div className="flex justify-center items-center p-1 bg-w95-grey">
-                <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey'>
-                  <Image 
-                    src="/images/left_arrow.svg" 
-                    alt="Previous News Icon"
-                    width={12}
-                    height={12}
-                  />
-                </button>
-              </div>
-
-              <div className='flex gap-8'>
-                <CarouselRadioButton id="no_news" name="last_news" selected/>
-              </div>
-
-              <div className="flex justify-center items-center p-1 bg-w95-grey">
-                <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey'>
-                  <Image 
-                    src="/images/right_arrow.svg" 
-                    alt="Next News Icon"
-                    width={12}
-                    height={12}
-                  />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </>
-    )
-  }
-
-  const [ current, setCurrent ] = useState<number>(0);  
-  const [ currentNews, setCurrentNews ] = useState<NewsArticle>(props.news[current]);
-  useEffect(() => setCurrentNews(props.news[current]));
-  
   return (
-    <>
-      <div className='flex'>
-        <div className='flex flex-col max-w-xl p-8 gap-8'>
-          <div>
-            <h1 className='font-ps2p text-2xl max-w-md'>{currentNews.title}</h1>
-            <h2 className='font-ps2p text-xs max-w-md text-black/50'>{currentNews.date}</h2>
+    <Window>
+      <div className={'flex group has-[:checked]:flex-col has-[:checked]:items-center gap-2 p-8' + (props.news.loading ? " blur" : "")}>
+        <div className='flex flex-col gap-8 order-1 transition-all items-center'>
+          <div className="font-ps2p flex-col flex gap-2">
+            <h1 className='text-2xl max-w-md group-has-[:checked]:max-w-full'>{props.news.title}</h1>
+            <h2 className='text-xs max-w-md group-has-[:checked]:max-w-full group-has-[:checked]:text-center text-black/50'>{props.news.date}</h2>
           </div>
-          <p className='max-w-md'>
-            <span>{cropText(currentNews.content, 400)} </span>
-            <a href={'/pages/news#' + currentNews.id} className="text-black/50">Leia mais</a>
-        </p>
+          <p className='max-w-md group-has-[:checked]:hidden'>{cropText(props.news.content, 400)}</p>
+          <p className='max-w-2xl text-center hidden group-has-[:checked]:block'>{props.news.content}</p>
         </div>
-        
-        <div className='flex flex-col p-8 gap-8 justify-center'>
-          <Image 
-            {...currentNews.icon}
-            width={400}
-            height={200}
-            className='aspect-video max-w-xl'
-          />
 
-          <div className="flex items-center justify-between px-2">
+        <div className='flex flex-col p-2 pt-6 gap-8 justify-center order-2 group-has-[:checked]:order-first'>
+          <div className="group-has-[:checked]:px-32">
+            <Image
+              {...props.news.icon}
+              width={600}
+              height={200}
+              className='aspect-video max-w-md group group-has-[:checked]:max-w-full'
+            />
+          </div>
+
+          <div className="flex items-center justify-center px-2 has-[:checked]:hidden">
             <div className="flex justify-center items-center p-1 bg-w95-grey">
-              <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey' onClick={() => setCurrent( (props.news.length + current - 1) % props.news.length )}>
-                <Image 
-                  src="/images/left_arrow.svg" 
-                  alt="Previous News Icon"
-                  width={12}
-                  height={12}
-                />
-              </button>
-            </div>
-
-            <div className='flex gap-8'>
-              { props.news.map((element, index) => <CarouselRadioButton id={element.id + "_news"} name="recent_news" selected={index == current} onclick={() => setCurrent((index))}/>) }
-            </div>
-
-            <div className="flex justify-center items-center p-1 bg-w95-grey">
-              <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey' onClick={() => setCurrent((current + 1) % props.news.length)}>
-                <Image 
-                  src="/images/right_arrow.svg" 
-                  alt="Next News Icon"
-                  width={12}
-                  height={12}
-                />
-              </button>
+              <label className='p-2 px-8 text-[#3E3E3E] flex justify-center items-center bg-w95-light-grey font-ps2p' htmlFor={checkBoxId}>
+                Abrir
+                <input type="checkbox" className="peer hidden" id={checkBoxId} />
+              </label>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </Window>
   )
 }
