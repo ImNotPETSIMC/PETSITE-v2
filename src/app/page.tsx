@@ -20,7 +20,7 @@ const Home = () => {
           <div className='flex flex-wrap gap-4'>
             <div className='flex gap-5 -translate-x-2 basis-full'>
               <Window>
-                <div className='font-monoton 2xl:py-28 2xl:px-56 py-20 px-16 text-8xl text-w95-purple'> PET-SIMC </div>
+                <div className='font-monoton 2xl:py-28 2xl:px-52 py-20 px-16 text-8xl text-w95-purple text-center'> PET-SIMC </div>
               </Window>
               
               <div className='translate-y-10'>
@@ -37,7 +37,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className='z-10 w-10/12 max-w-[80rem]'>
+            <div className='z-10 w-10/12 max-w-7xl'>
               <Window>
                 <InfoContainer/>
               </Window>
@@ -51,7 +51,7 @@ const Home = () => {
               </Window>
             </div>
 
-            <div className='z-10 w-10/12 max-w-[80rem] translate-x-20'>
+            <div className='z-10 w-10/12 max-w-7xl min-w-fit translate-x-20'>
               <Window>
                 <NewsContainer news={[]}/>
               </Window>
