@@ -13,10 +13,10 @@ import { Footer } from './components/footer';
 const Home = () => {
   return (
     <>
-      <main className={`${monda.variable} ${ps2p.variable} ${monoton.variable} font-monda p-5`}>
+      <main className={`${monda.variable} ${ps2p.variable} ${monoton.variable} font-monda p-5 mb-32 grow`}>
         <div className='flex gap-10'>
           <NavBar />
-
+          
           <div className='flex flex-wrap gap-4'>
             <div className='flex gap-5 -translate-x-2 basis-full'>
               <Window>
@@ -46,7 +46,7 @@ const Home = () => {
                       alt="Youtube's Logo"
                     />
                   </a>
-                  <div className='bg-white w-full'>Youtube</div> 
+                  <div className='bg-white w-full px-2'>Youtube</div> 
                 </div>
 
                 <div className='flex flex-col items-center text-[0.5rem] text-center border-white border border-solid bg-white/20 h-fit'>
@@ -58,7 +58,7 @@ const Home = () => {
                       alt="Spotify's Logo"
                     />
                   </a>
-                  <div className='bg-white w-full'>Spotify</div> 
+                  <div className='bg-white w-full px-2'>Spotify</div> 
                 </div>
 
                 <div className='flex flex-col items-center text-[0.5rem] text-center border-white border border-solid h-fit bg-white/20'>
@@ -71,7 +71,7 @@ const Home = () => {
                       className='mix-blend-multiply'
                     />
                   </a>
-                  <div className='bg-white w-full'>PETCast</div> 
+                  <div className='bg-white w-full px-2'>PETCast</div> 
                 </div>
               </div>
             </div>
@@ -90,7 +90,7 @@ const Home = () => {
               </Window>
             </div>
 
-            <div className='z-10 w-10/12 max-w-7xl min-w-fit translate-x-20'>
+            <div className='z-10 w-10/12 max-w-7xl min-w-fit'>
               <Window>
                 <NewsContainer news={[]}/>
               </Window>

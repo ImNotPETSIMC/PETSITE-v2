@@ -13,7 +13,7 @@ export const Footer = () => {
     }, [])
 
     return (
-        <div className="h-14 bg-w95-darker-grey flex items-center px-2 font-ps2p mt-32 justify-between">
+        <div className="h-14 bg-w95-darker-grey flex items-center px-2 font-ps2p justify-between">
             <div className="flex gap-2 items-center min-w-fit">
                 <a href="#" className="h-10 flex items-center gap-2 bg-w95-grey border-w95-dark-grey border-4 border-solid text-xs px-2">
                     <Image 
