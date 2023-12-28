@@ -5,7 +5,7 @@ import './globals.css';
 import Image from 'next/image';
 import { Window } from './components/window';
 import { NavBar } from './components/nav_bar';
-import { NewsContainer } from './components/news_container';
+import { LastNewsContainer } from './components/last_news_container';
 import { InfoContainer } from './components/info_container';
 import { Footer } from './components/footer';
 
@@ -90,7 +90,7 @@ const Home = () => {
 
             <div className='z-10 w-10/12 min-w-fit translate-x-4 2xl:translate-x-20 flex basis-full'>
               <Window>
-                <NewsContainer news={[]} />
+                <LastNewsContainer news={[]} />
               </Window>
             </div>
 

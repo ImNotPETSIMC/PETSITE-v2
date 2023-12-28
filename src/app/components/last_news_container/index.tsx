@@ -14,11 +14,11 @@ export type NewsArticle = {
   }   
 }
 
-export type NewsContainerProps = {
+export type LastNewsContainerProps = {
   news: NewsArticle[]
 }
 
-export const NewsContainer = (props: NewsContainerProps) => {
+export const LastNewsContainer = (props: LastNewsContainerProps) => {
   if(!props.news.length) {
     return (
       <>
