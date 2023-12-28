@@ -90,7 +90,7 @@ const Home = () => {
               </Window>
             </div>
 
-            <div className='z-10 w-10/12 max-w-7xl min-w-fit'>
+            <div className='z-10 w-10/12 min-w-fit translate-x-4 2xl:translate-x-20 flex basis-full'>
               <Window>
                 <NewsContainer news={[]}/>
               </Window>
