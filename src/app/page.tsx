@@ -96,7 +96,7 @@ const Home = () => {
               </Window>
             </div>
 
-            <div className='basis-full flex justify-end'>
+            <div className='basis-full flex justify-end max-w-7xl'>
               <Window>
                 <div className='font-ps2p text-lg py-4 px-8'>
                   <p className='text-w95-purple flex'>printf<span className='text-[#973CFA]'>(<span className='text-black'>"hello world"</span>)</span></p>
