@@ -35,6 +35,45 @@ const Home = () => {
                   </div>
                 </Window>
               </div>
+
+              <div className='translate-y-10 font-ps2p flex flex-col gap-4'>
+                <div className='flex flex-col items-center text-[0.5rem] text-center border-white border border-solid bg-white/20 h-fit'>
+                  <a className='p-2' href='https://www.youtube.com/@petsimc3135'>
+                    <Image 
+                      src="/images/youtube_logo.png"
+                      width={60}
+                      height={60}
+                      alt="Youtube's Logo"
+                    />
+                  </a>
+                  <div className='bg-white w-full'>Youtube</div> 
+                </div>
+
+                <div className='flex flex-col items-center text-[0.5rem] text-center border-white border border-solid bg-white/20 h-fit'>
+                  <a className='p-2' href='https://open.spotify.com/show/390mvapHgaoTZFQoeusC7z?si=92010368c3744da7'>
+                    <Image 
+                      src="/images/spotify_logo.png"
+                      width={60}
+                      height={60}
+                      alt="Spotify's Logo"
+                    />
+                  </a>
+                  <div className='bg-white w-full'>Spotify</div> 
+                </div>
+
+                <div className='flex flex-col items-center text-[0.5rem] text-center border-white border border-solid h-fit bg-white/20'>
+                  <a className='p-2' href='#'>
+                    <Image 
+                      src="/images/petcast_logo.png"
+                      width={60}
+                      height={60}
+                      alt="PETCast's Logo"
+                      className='mix-blend-multiply'
+                    />
+                  </a>
+                  <div className='bg-white w-full'>PETCast</div> 
+                </div>
+              </div>
             </div>
 
             <div className='z-10 w-10/12 max-w-7xl'>
