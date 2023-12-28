@@ -50,7 +50,7 @@ export const Footer = () => {
                 </a>
             </div>
             <div suppressHydrationWarning className="h-10 min-w-20 flex items-center gap-2 bg-w95-grey border-w95-dark-grey border-4 border-solid text-xs px-2">
-                {today.getHours() + ":" + (today.getMinutes().toString().length == 1 ? 0 : "") + today.getMinutes()}
+                {(today.getHours().toString().length == 1 ? "0" : "") + today.getHours() + ":" + (today.getMinutes().toString().length == 1 ? 0 : "") + today.getMinutes()}
             </div>  
         </div> 
     )
