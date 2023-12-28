@@ -1,5 +1,5 @@
-import type { Metadata } from 'next'
-import { Viewport } from 'next'
+import type { Metadata, Viewport } from 'next'
+import { monda, monoton, ps2p } from './fonts'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {  
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${monda.variable} ${ps2p.variable} ${monoton.variable}`}>{children}</body>
     </html>
   )
 }
