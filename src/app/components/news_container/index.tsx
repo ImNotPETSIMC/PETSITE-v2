@@ -23,15 +23,15 @@ export const NewsContainer = (props: NewsContainerProps) => {
     return (
       <>
         <div className='flex'>
-          <div className='flex flex-col max-w-xl px-10 py-8 gap-8'>
+          <div className='flex flex-col max-w-xl p-8 gap-8'>
             <div>
-              <h1 className='font-ps2p text-2xl max-w-lg'>Notícias Não Encontradas</h1>
-              <h2 className='font-ps2p text-xs max-w-lg text-black/50'>Error - Falha de Comunicação</h2>
+              <h1 className='font-ps2p text-2xl max-w-md'>Notícias Não Encontradas</h1>
+              <h2 className='font-ps2p text-xs max-w-md text-black/50'>Error - Falha de Comunicação</h2>
             </div>
-            <p className='max-w-md'>No momento não conseguimos nos conectar ao banco de notícias do PET-SIMC. Caso sua internet esteja funcionando normalmente, favor entrar em um contato com um membro do PET-SIMC informando o erro.</p>
+            <p className='max-w-md'>No momento não conseguimos nos conectar ao banco de notícias do PET-SIMC. Caso sua internet esteja funcionando normalmente, favor entrar em contato com um membro do PET-SIMC informando o erro.</p>
           </div>
             
-          <div className='flex flex-col py-8 gap-8 px-10 justify-center'>
+          <div className='flex flex-col p-8 gap-8 justify-center'>
             <Image 
               src={"/images/ufu.jpg"}
               alt={"Logo do PET-SIMC"}
@@ -80,10 +80,10 @@ export const NewsContainer = (props: NewsContainerProps) => {
   return (
     <>
       <div className='flex'>
-        <div className='flex flex-col max-w-xl px-10 py-8 gap-8'>
+        <div className='flex flex-col max-w-xl p-8 gap-8'>
           <div>
-            <h1 className='font-ps2p text-2xl max-w-lg'>{currentNews.title}</h1>
-            <h2 className='font-ps2p text-xs max-w-lg text-black/50'>{currentNews.date}</h2>
+            <h1 className='font-ps2p text-2xl max-w-md'>{currentNews.title}</h1>
+            <h2 className='font-ps2p text-xs max-w-md text-black/50'>{currentNews.date}</h2>
           </div>
           <p className='max-w-md'>
             <span>{cropText(currentNews.content, 400)} </span>
@@ -91,7 +91,7 @@ export const NewsContainer = (props: NewsContainerProps) => {
         </p>
         </div>
         
-        <div className='flex flex-col py-8 gap-8 px-10 justify-center'>
+        <div className='flex flex-col p-8 gap-8 justify-center'>
           <Image 
             {...currentNews.icon}
             width={400}
