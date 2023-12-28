@@ -96,7 +96,7 @@ const News = () => {
                     <div className='z-10 translate-x-2 2xl:translate-x-20 flex basis-full'>
                       <NewsContainer news={element} />
                     </div>
-                    <div className={ index % 2 ? 'basis-full flex justify-end max-w-7xl' : 'basis-full -translate-x-40'}>
+                    <div className={ 'basis-full' + index % 2 ? ' flex justify-end max-w-7xl' : ' -translate-x-40'}>
                       <Window>
                         <div className='font-ps2p text-lg py-4 px-8'>
                           <p className='text-w95-purple flex'>printf<span className='text-[#973CFA]'>(<span className='text-black'>"hello world"</span>)</span></p>
