@@ -3,20 +3,10 @@ import Link from 'next/link';
 import { useEffect, useState } from "react";
 import { CarouselRadioButton } from "./CarouselRadioButton";
 import { cropText } from "@/app/helpers/cropText";
-
-export type NewsArticle = {   
-  title: string
-  content: string, 
-  date: string,
-  id: string, 
-  icon: { 
-    src: string,  
-    alt: string
-  }   
-}
+import { Article } from "../news_container";
 
 export type LastNewsContainerProps = {
-  news: NewsArticle[]
+  news: Article[]
 }
 
 export const LastNewsContainer = (props: LastNewsContainerProps) => {
@@ -75,7 +65,7 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
   }
 
   const [ current, setCurrent ] = useState<number>(0);  
-  const [ currentNews, setCurrentNews ] = useState<NewsArticle>(props.news[current]);
+  const [ currentNews, setCurrentNews ] = useState<Article>(props.news[current]);
   useEffect(() => setCurrentNews(props.news[current]));
   
   return (
