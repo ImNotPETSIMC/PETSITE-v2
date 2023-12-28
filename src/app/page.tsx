@@ -95,6 +95,15 @@ const Home = () => {
                 <NewsContainer news={[]}/>
               </Window>
             </div>
+
+            <div className='basis-full flex justify-end'>
+              <Window>
+                <div className='font-ps2p text-lg py-4 px-8'>
+                  <p className='text-w95-purple flex'>printf<span className='text-[#973CFA]'>(<span className='text-black'>"hello world"</span>)</span></p>
+                </div>
+              </Window>
+            </div>
+
           </div>
         </div>
       </main>
