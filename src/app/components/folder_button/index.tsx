@@ -19,7 +19,7 @@ export type FolderButtonProps = {
 export const FolderButton = (props: FolderButtonProps) => {
     return (
         <>
-            <label htmlFor={props.id} className="font-ps2p text-xs basis-1/4" onClick={props.onclick}>
+            <label htmlFor={props.id} className="font-ps2p text-xs w-[30%] text-center" onClick={props.onclick}>
                 <div className="flex flex-col gap-2 items-center">
                     <Image {...props.icon} />
                     <p>{props.title}</p>

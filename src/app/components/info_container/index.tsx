@@ -92,8 +92,8 @@ export const InfoContainer = () => {
                 <p className='max-w-md'>{infoText.content}</p>
             </div>
             
-            <div className='flex grow items-center flex-wrap gap-4 py-20 justify-center'>
-                {folderButtons.map((element : FolderButtonProps) => { return <FolderButton key={element.id} {...element} onclick={() => setInfoText(InfoTexts[element.id])} />})}
+            <div className='flex items-center flex-wrap gap-4 py-20 pr-4 justify-center'>
+              {folderButtons.map((element : FolderButtonProps) => { return <FolderButton key={element.id} {...element} onclick={() => setInfoText(InfoTexts[element.id])} />})}
             </div>
         </div>
     )
