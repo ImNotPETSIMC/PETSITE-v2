@@ -4,7 +4,6 @@ import './globals.css';
 
 import Image from 'next/image';
 import { Window } from './components/window';
-import { monda, monoton, ps2p } from './fonts';
 import { NavBar } from './components/nav_bar';
 import { NewsContainer } from './components/news_container';
 import { InfoContainer } from './components/info_container';
