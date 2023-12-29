@@ -33,7 +33,7 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
 
             <div className="flex items-center justify-between px-2">
               <div className="flex justify-center items-center p-1 bg-w95-grey">
-                <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey'>
+                <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey hover:bg-w95-light-grey/60'>
                   <Image 
                     src="/images/left_arrow.svg" 
                     alt="Previous News Icon"
@@ -48,7 +48,7 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
               </div>
 
               <div className="flex justify-center items-center p-1 bg-w95-grey">
-                <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey'>
+                <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey hover:bg-w95-light-grey/60'>
                   <Image 
                     src="/images/right_arrow.svg" 
                     alt="Next News Icon"
@@ -92,7 +92,7 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
 
           <div className="flex items-center justify-between px-2">
             <div className="flex justify-center items-center p-1 bg-w95-grey">
-              <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey' onClick={() => setCurrent( (props.news.length + current - 1) % props.news.length )}>
+              <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey hover:bg-w95-light-grey/60' onClick={() => setCurrent( (props.news.length + current - 1) % props.news.length )}>
                 <Image 
                   src="/images/left_arrow.svg" 
                   alt="Previous News Icon"
@@ -107,7 +107,7 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
             </div>
 
             <div className="flex justify-center items-center p-1 bg-w95-grey">
-              <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey' onClick={() => setCurrent((current + 1) % props.news.length)}>
+              <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey hover:bg-w95-light-grey/60' onClick={() => setCurrent((current + 1) % props.news.length)}>
                 <Image 
                   src="/images/right_arrow.svg" 
                   alt="Next News Icon"

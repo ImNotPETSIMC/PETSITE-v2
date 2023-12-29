@@ -21,7 +21,7 @@ export type FolderButtonProps = {
 export const FolderButton = (props: FolderButtonProps) => {
     return (
         <>
-            <label htmlFor={props.id} className={"font-ps2p text-xs text-center" + (props.custom ? ` ${props.custom}` : " w-[30%]")} onClick={props.onclick}>
+            <label htmlFor={props.id} className={"font-ps2p text-xs text-center hover:bg-w95-grey hover:cursor-pointer" + (props.custom ? ` ${props.custom}` : " w-[30%]")} onClick={props.onclick}>
                 <div className="flex flex-col gap-2 items-center">
                     <Image {...props.icon} />
                     <p>{props.title}</p>
