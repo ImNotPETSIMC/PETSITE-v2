@@ -7,11 +7,64 @@ import Link from 'next/link';
 import { Footer } from "@/app/components/footer";
 import { NavBar } from "@/app/components/nav_bar";
 import { Window } from "@/app/components/window";
+import { FolderButtonProps } from '@/app/components/folder_button';
+import { InfoContainer } from '@/app/components/info_container';
+import { exMembersPetsimc, exTutorsPetsimc, membersPetsimc, tutorPetsimc } from '@/app/assets/texts';
+import { MembersContainer } from '@/app/components/members_container';
 
 
 const Members = () => {
-  const aboutText = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia sunt eveniet, rerum est harum at esse illo molestias labore, blanditiis qui soluta, neque laborum officiis impedit voluptatem obcaecati quisquam pariatur!"
-
+  const folderButtons: FolderButtonProps[] = [
+    {
+      name: "info-text",
+      title: "Membros",
+      id: "members",
+      text: membersPetsimc,
+      icon: {
+        src: "/images/folder_red_file.png",
+        alt: "Members Icon",
+        width: 75,
+        height: 75
+      }
+    },
+    {
+      name: "info-text",
+      title: "Ex-Membros",
+      id: "ex_members",
+      text: exMembersPetsimc,
+      icon: {
+        src: "/images/folder_green_file.png",
+        alt: "Ex-Members Icon",
+        width: 75,
+        height: 75
+      }
+    },
+    {
+      name: "info-text",
+      title: "Tutor",
+      id: "tutor",
+      text: tutorPetsimc,
+      icon: {
+        src: "/images/folder_blue_file.png",
+        alt: "Tutor Icon",
+        width: 75,
+        height: 75
+      }
+    },
+    {
+      name: "info-text",
+      title: "Ex-Tutores",
+      id: "ex-tutor",
+      text: exTutorsPetsimc,
+      icon: {
+        src: "/images/folder_yellow_file.png",
+        alt: "Ex-Tutors Icon",
+        width: 75,
+        height: 75
+      }
+    },
+  ];
+  
   return (
     <>
       <main className="font-monda p-5 mb-32 grow">
@@ -76,31 +129,13 @@ const Members = () => {
               </div>
             </div>
 
-            <div className='z-10 translate-x-2 2xl:translate-x-20 flex basis-full'>
+            <div className='z-10 w-10/12 max-w-7xl'>
               <Window>
-                <div className='flex flex-col p-2 pt-6 gap-8 justify-center'>
-                  <div className="px-32">
-                    <Image
-                      src={"/images/pet_background.png"}
-                      alt="PET-SIMC's Article Photo"
-                      width={600}
-                      height={200}
-                      className='aspect-video max-w-full'
-                    />
-                  </div>
-                </div>
-
-                <div className={'flex flex-col items-center gap-2 p-8'}>
-                  <div className='flex flex-col gap-8 order-1 transition-all items-center'>
-                    <div className="font-ps2p flex-col flex gap-2">
-                      <h1 className='text-2xl max-w-full text-center'>Sobre o PET-SIMC</h1>
-                      <h2 className='text-xs max-w-full text-center text-black/50'>PET de Sistemas de Informação de Monte Carmelo</h2>
-                    </div>
-                    <p className='max-w-2xl text-center'>{aboutText}</p>
-                  </div>
-                </div>
+                <InfoContainer content={folderButtons} custom={"w-1/3"}/>
               </Window>
             </div>
+            
+            <div className='basis-full' />
 
             <div className={'basis-full flex justify-end max-w-7xl'}>
               <Window>
@@ -109,6 +144,23 @@ const Members = () => {
                 </div>
               </Window>
             </div>
+
+            <div className='basis-full' />
+
+            <div className='z-10 w-10/12 max-w-7xl translate-x-4 2xl:translate-x-20'>
+              <Window>
+                <MembersContainer members={[]} title='Membros' subtitle='Membros atuais do PET-SIMC' />
+              </Window>
+            </div>
+
+            <div className='basis-full -translate-x-40'>
+              <Window>
+                <div className='font-ps2p text-lg py-4 px-8'>
+                  <p className='text-w95-blue flex'>printf<span className='text-[#009ED0]'>(<span className='text-black'>"hello world"</span>)</span></p>
+                </div>
+              </Window>
+            </div>
+              
           </div>
         </div>
       </main>
