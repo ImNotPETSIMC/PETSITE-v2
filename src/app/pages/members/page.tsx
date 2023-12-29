@@ -11,6 +11,7 @@ import { FolderButtonProps } from '@/app/components/folder_button';
 import { InfoContainer } from '@/app/components/info_container';
 import { exMembersPetsimc, exTutorsPetsimc, membersPetsimc, tutorPetsimc } from '@/app/assets/texts';
 import { MembersContainer } from '@/app/components/members_container';
+import { MemberSection } from '@/app/components/member_section';
 
 
 const Members = () => {
@@ -147,20 +148,7 @@ const Members = () => {
 
             <div className='basis-full' />
 
-            <div className='z-10 w-10/12 max-w-7xl translate-x-4 2xl:translate-x-20'>
-              <Window>
-                <MembersContainer members={[]} title='Membros' subtitle='Membros atuais do PET-SIMC' />
-              </Window>
-            </div>
-
-            <div className='basis-full -translate-x-40'>
-              <Window>
-                <div className='font-ps2p text-lg py-4 px-8'>
-                  <p className='text-w95-blue flex'>printf<span className='text-[#009ED0]'>(<span className='text-black'>"hello world"</span>)</span></p>
-                </div>
-              </Window>
-            </div>
-              
+            <MemberSection members={[]} title='Membros' subtitle='Membros atuais do PET-SIMC'/>
           </div>
         </div>
       </main>

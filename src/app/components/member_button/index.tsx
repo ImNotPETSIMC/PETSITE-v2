@@ -5,8 +5,10 @@ import { MouseEventHandler } from "react";
 
 export type MemberButtonProps = {
     name: string,
-    id: string, 
-    onclick?: MouseEventHandler<HTMLLabelElement>, 
+    id: string,
+    title: string,
+    onclick?: MouseEventHandler<HTMLLabelElement>,
+    onhover?: MouseEventHandler<HTMLLabelElement>,
     icon: { 
         src: string,  
         alt: string
@@ -17,7 +19,8 @@ export const MemberButton = (props: MemberButtonProps) => {
     return (
         <>
             <div className="flex justify-center items-center basis-[12%]">
-                <label htmlFor={props.id} className="border-4 border-w95-blue border-solid font-ps2p text-xs text-center" onClick={props.onclick}>
+                <label htmlFor={props.id} className="relative border-4 border-w95-blue border-solid font-ps2p text-xs text-center" onClick={props.onclick} onMouseOver={props.onhover}>
+                    <div className="w-full h-full top-0 left-0 absolute hover:bg-w95-blue/40 hover:animate-pulse z-10 transition-all"></div>
                     <Image {...props.icon} width={150} height={150} />
                 </label>  
             </div>
