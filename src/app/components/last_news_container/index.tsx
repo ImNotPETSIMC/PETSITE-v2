@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useEffect, useState } from "react";
 import { CarouselRadioButton } from "./CarouselRadioButton";
 import { cropText } from "@/app/helpers/cropText";
-import { Article } from "../news_container";
+import { Article } from "../content_container";
 
 export type LastNewsContainerProps = {
   news: Article[]
@@ -77,7 +77,7 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
             <h2 className='font-ps2p text-xs max-w-md text-black/50'>{currentNews.date}</h2>
           </div>
           <p className='max-w-md'>
-            <span>{cropText(currentNews.content, 400)} </span>
+            <span>{cropText(currentNews.body, 400)} </span>
             <Link href={'/pages/news#' + currentNews.id} className="text-black/50">Leia mais</Link>
         </p>
         </div>

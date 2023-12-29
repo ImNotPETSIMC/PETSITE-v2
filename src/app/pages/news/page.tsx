@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from 'next/link';
 import { Footer } from "@/app/components/footer";
 import { NavBar } from "@/app/components/nav_bar";
-import { Article, NewsContainer } from '@/app/components/news_container';
+import { Article, ContentContainer } from '@/app/components/content_container';
 import { Window } from "@/app/components/window";
 import { useState } from 'react';
 
@@ -94,7 +94,7 @@ const News = () => {
                 return (
                   <>
                     <div className='z-10 translate-x-2 2xl:translate-x-20 flex basis-full'>
-                      <NewsContainer news={element} />
+                      <ContentContainer news={element} />
                     </div>
                     <div className={ 'basis-full' + (index % 2 ? ' flex justify-end max-w-7xl' : ' -translate-x-40')}>
                       <Window>
