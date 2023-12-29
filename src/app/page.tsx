@@ -17,9 +17,9 @@ const Home = () => {
         <div className='flex gap-10'>
           <NavBar />
           <div className='flex flex-wrap gap-4'>
-            <div className='flex gap-5 -translate-x-2 basis-full'>
+            <div className='flex gap-5 -translate-x-2 basis-full '>
               <Window>
-                <div className='font-monoton 2xl:py-28 2xl:px-52 py-20 px-16 text-8xl text-w95-purple text-center'> PET-SIMC </div>
+                <div className='font-monoton 2xl:py-28 2xl:px-52 py-20 px-16 text-8xl text-w95-blue text-center'> PET-SIMC </div>
               </Window>
 
               <div className='translate-y-10'>
@@ -84,21 +84,22 @@ const Home = () => {
             <div className='basis-full -translate-x-40'>
               <Window>
                 <div className='font-ps2p text-lg py-4 px-8'>
-                  <p className='text-w95-purple flex'>printf<span className='text-[#973CFA]'>(<span className='text-black'>"hello world"</span>)</span></p>
+                  <p className='text-w95-blue flex'>printf<span className='text-[#009ED0]'>(<span className='text-black'>"hello world"</span>)</span></p>
                 </div>
               </Window>
             </div>
 
-            <div className='z-10 w-10/12 min-w-fit translate-x-4 2xl:translate-x-20 flex basis-full'>
+            <div className='z-10 w-10/12 max-w-7xl min-w-fit translate-x-4 2xl:translate-x-20 flex basis-full'>
               <Window>
                 <LastNewsContainer news={[]} />
               </Window>
             </div>
+            <div className='basis-full'/>
 
             <div className='basis-full flex justify-end max-w-7xl'>
               <Window>
                 <div className='font-ps2p text-lg py-4 px-8'>
-                  <p className='text-w95-purple flex'>printf<span className='text-[#973CFA]'>(<span className='text-black'>"hello world"</span>)</span></p>
+                  <p className='text-w95-blue flex'>printf<span className='text-[#009ED0]'>(<span className='text-black'>"hello world"</span>)</span></p>
                 </div>
               </Window>
             </div>
