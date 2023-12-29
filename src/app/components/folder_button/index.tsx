@@ -7,6 +7,7 @@ export type FolderButtonProps = {
     name: string,
     title: string, 
     id: string, 
+    text: string,
     onclick?: MouseEventHandler<HTMLLabelElement>, 
     icon: { 
         src: string,  
