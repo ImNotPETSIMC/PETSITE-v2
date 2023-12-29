@@ -4,7 +4,7 @@ export const Window = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <div className="border-w95-grey border-8 border-solid w-fit h-fit">
-            <div className="border-w95-grey border-b-2 border-solid w-full h-6 bg-w95-purple flex items-center justify-end gap-2 pl-10 pr-1">
+            <div className="border-w95-grey border-b-2 border-solid w-full h-6 bg-w95-blue flex items-center justify-end gap-2 pl-10 pr-1">
                 <div className="flex items-center bg-w95-grey h-fit w-fit p-0.5">
                     <div className="border-b border-solid border-black h-3 w-3"></div>
                 </div>

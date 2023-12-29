@@ -33,7 +33,7 @@ const News = () => {
           <div className='flex flex-wrap gap-4'>
             <div className='flex gap-5 -translate-x-2 basis-full'>
               <Window>
-                <div className='font-monoton 2xl:py-28 2xl:px-52 py-20 px-16 text-8xl text-w95-purple text-center'> PET-SIMC </div>
+                <div className='font-monoton 2xl:py-28 2xl:px-52 py-20 px-16 text-8xl text-w95-blue text-center'> PET-SIMC </div>
               </Window>
 
               <div className='translate-y-10'>
@@ -99,7 +99,7 @@ const News = () => {
                     <div className={ 'basis-full' + index % 2 ? ' flex justify-end max-w-7xl' : ' -translate-x-40'}>
                       <Window>
                         <div className='font-ps2p text-lg py-4 px-8'>
-                          <p className='text-w95-purple flex'>printf<span className='text-[#973CFA]'>(<span className='text-black'>"hello world"</span>)</span></p>
+                          <p className='text-w95-blue flex'>printf<span className='text-[#009ED0]'>(<span className='text-black'>"hello world"</span>)</span></p>
                         </div>
                       </Window>
                     </div>
