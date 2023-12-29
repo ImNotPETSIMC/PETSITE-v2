@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export type InfoContainerProps = {
   content: FolderButtonProps[]
+  custom?: string
 }
 
 export const InfoContainer = (props: InfoContainerProps) => {
@@ -16,7 +17,7 @@ export const InfoContainer = (props: InfoContainerProps) => {
             </div>
             
             <div className='flex items-center flex-wrap gap-4 py-20 pr-4 justify-center'>
-              {props.content.map((element, index) => { return <FolderButton key={element.id} {...element} onclick={() => setInfoText(props.content[index])} />})}
+              {props.content.map((element, index) => { return <FolderButton custom={props.custom} key={element.id} {...element} onclick={() => setInfoText(props.content[index])} />})}
             </div>
         </div>
     )
