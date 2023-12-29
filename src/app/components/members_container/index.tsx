@@ -11,7 +11,7 @@ export type MembersContainerProps = {
 const undefinedMember = {
     name: "members",
     title: "Membro não definido",
-    id: "member-",
+    id: "member",
     icon: {
       src: "/images/undefined_member.png",
       alt: "Members Icon"
@@ -28,7 +28,7 @@ export const MembersContainer = (props: MembersContainerProps) => {
                 <p className='text-black/50'>{props.subtitle}</p>
             </div>
             <div className='flex items-center flex-wrap justify-between gap-8 py-10'>
-                {props.members.map((element, index) => { return <MemberButton key={element.id +"-"+ index} {...element} onhover={() => props.onhover(element.title)}/>})}
+                {props.members.map((element, index) => { return <MemberButton key={element.id +"-"+ index} {...element} onmouseover={() => props.onhover('"' + element.title + '"')} onmouseout={() => props.onhover('"hello world"')}/>})}
             </div>
         </div>
     )
