@@ -47,7 +47,7 @@ export const NewsContainer = (props: NewsContainerProps) => {
           <div className="flex items-center justify-center px-2 has-[:checked]:hidden">
             <div className="flex justify-center items-center p-1 bg-w95-grey">
               <label className='p-2 px-8 text-[#3E3E3E] flex justify-center items-center bg-w95-light-grey font-ps2p' htmlFor={checkBoxId}>
-                Abrir
+                Saiba Mais
                 <input type="checkbox" className="peer hidden" id={checkBoxId} />
               </label>
             </div>
