@@ -2,31 +2,28 @@ import Image from "next/image";
 import Link from "next/link";
 import { MouseEventHandler } from "react";
 
-export type Member = {
+export type Tutor = {
     name: string;
     photo?: string;
     admission_year?: number;
-    course_curriculum?: 2016 | 2022;
-    favorite_pillar?: "Pesquisa" | "Ensino" | "Extensão";
     place_of_birth?: string;
-    hobby?: string,
+    area?: string;
+    disciplines?: string[];
     email?: string;
+    status?: string;
     github_url?: string;
     instagram_url?: string;
     linkedin_url?: string;
     lattes_url?: string;
-    spotify_track_url?: string;
-    status?: string;
-    projects?: string[];
 }
 
-export type MemberCardProps = {
-    member: Member,
+export type TutorCardProps = {
+    member: Tutor,
     onClickLeft?: MouseEventHandler<HTMLButtonElement>,
     onClickRight?: MouseEventHandler<HTMLButtonElement>,
 }
 
-export const MemberCard = (props: MemberCardProps) => {
+export const TutorCard = (props: TutorCardProps) => {
     return ( 
         <div className='flex font-ps2p py-8 gap-8 p-4 '>
             <div className="flex justify-center items-center">
@@ -39,20 +36,28 @@ export const MemberCard = (props: MemberCardProps) => {
                     />
                 </button>
             </div>
-            <div className="flex flex-col gap-8 grow items-center">
-                <div className="text-center">
-                    <h1 className='text-2xl'>{props.member.name ? props.member.name : "Membro Não Definido"}</h1>
-                    <h2 className='text-sm text-black/50'>{props.member.status ? (props.member.status + " do PET-SIMC") : "undefined" }</h2>
+            <div className="flex flex-col items-center grow justify-between gap-4">
+                <div className="flex flex-col items-center gap-8 grow">
+                    <div className="text-center">
+                        <h1 className='text-2xl'>{props.member.name ? props.member.name : "Membro Não Definido"}</h1>
+                        <h2 className='text-sm text-black/50'>{props.member.status ? (props.member.status + " do PET-SIMC") : "undefined" }</h2>
+                    </div>
+                    <div className="flex flex-col gap-4 text-xs">
+                        <p>📅 - Ingresso no PET:    <span className={'text-black/50 ' + (props.member.admission_year     ? "" : "glitch")}>{props.member.admission_year    ? props.member.admission_year            : "undefined"}</span></p>
+                        <p>🏙️ - Naturalidade:       <span className={'text-black/50 ' + (props.member.place_of_birth     ? "" : "glitch")}>{props.member.place_of_birth    ? props.member.place_of_birth            : "undefined"}</span></p>
+                        <p>🏛️ - Área:               <span className={'text-black/50 ' + (props.member.area               ? "" : "glitch")}>{props.member.area              ? props.member.area                      : "undefined"}</span></p>
+                        <p>🎓 - Disciplinas         <span className={'text-black/50 ' + (props.member.disciplines        ? "" : "glitch")}>{props.member.disciplines       ? props.member.disciplines.join(", ")    : "undefined"}</span></p>
+                    </div>
                 </div>
-                <div className="flex flex-col gap-4 text-xs">
-                    <p>📅 - Ingresso no PET:    <span className={'text-black/50 ' + (props.member.admission_year     ? "" : "glitch")}>{props.member.admission_year    ? props.member.admission_year       : "undefined"}</span></p>
-                    <p>🏛️ - Pilar Preferido:    <span className={'text-black/50 ' + (props.member.favorite_pillar    ? "" : "glitch")}>{props.member.favorite_pillar   ? props.member.favorite_pillar      : "undefined"}</span></p>
-                    <p>🎓 - Grade Disciplinar:  <span className={'text-black/50 ' + (props.member.course_curriculum  ? "" : "glitch")}>{props.member.course_curriculum ? props.member.course_curriculum    : "undefined"}</span></p>
-                    <p>🏙️ - Naturalidade:       <span className={'text-black/50 ' + (props.member.place_of_birth     ? "" : "glitch")}>{props.member.place_of_birth    ? props.member.place_of_birth       : "undefined"}</span></p>
-                    <p>🎈 - Hobby:              <span className={'text-black/50 ' + (props.member.hobby              ? "" : "glitch")}>{props.member.hobby             ? props.member.hobby                : "undefined"}</span></p>
-                    <p>🛠️ - Projetos:           <span className={'text-black/50 ' + (props.member.projects           ? "" : "glitch")}>{props.member.projects           ? props.member.projects.join(", ") : "undefined"}</span></p>
-                </div>
-                <iframe style={{borderRadius: "12px"}} src={"https://open.spotify.com/embed/track/" + props.member.spotify_track_url + "?utm_source=generator"} width="100%" height="152" allow="autoplay;" loading="lazy"></iframe>
+                <Link className={'flex justify-center max-w-60 px-8 py-4 text-black/80 bg-w95-light-grey border-4 border-solid border-w95-darker-grey items-center gap-4' + (props.member.email ? "hover:brightness-90" : " grayscale brightness-100")} href={props.member.email ? "mailto:"+props.member.email : ""}>
+                    Contato
+                    <Image
+                    src="/images/email_icon.svg"
+                    width={20}
+                    height={20}
+                    alt="Github's Logo"
+                    />
+                </Link>
             </div>
             <div className="flex flex-col gap-4 items-center">
                 <Image alt={"PET-SIMC's Photo"} src={props.member.photo ? ("data:image/jpeg;base64," + props.member.photo) : "/images/undefined_member.png"} width={300} height={300} className="aspect-square border-w95-grey border-8 border-solid"/>
