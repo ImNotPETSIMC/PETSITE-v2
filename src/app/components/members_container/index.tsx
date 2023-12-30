@@ -5,7 +5,8 @@ export type MembersContainerProps = {
     title: string,
     subtitle: string,
     members: MemberButtonProps[],
-    onhover: Dispatch<SetStateAction<string>>
+    onhover: Dispatch<SetStateAction<string>>,
+    onclick: Dispatch<SetStateAction<number>>
 }
 
 export const MembersContainer = (props: MembersContainerProps) => {
@@ -16,7 +17,7 @@ export const MembersContainer = (props: MembersContainerProps) => {
                 <p className='text-black/50'>{props.subtitle}</p>
             </div>
             <div className='flex items-center flex-wrap justify-between gap-8 py-10'>
-                {props.members.map((element, index) => { return <MemberButton key={element.name} {...element} onmouseover={() => props.onhover('"' + element.name + '"')} onmouseout={() => props.onhover('"hello world"')}/>})}
+                {props.members.map((element, index) => { return <MemberButton  onclick={() => props.onclick(index)} key={element.name} {...element} onmouseover={() => props.onhover('"' + element.name + '"')} onmouseout={() => props.onhover('"hello world"')} />})}
             </div>
         </div>
     )

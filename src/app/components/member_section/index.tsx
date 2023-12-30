@@ -1,12 +1,7 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { MembersContainer } from "../members_container"
 import { Window } from "../window"
 import { Member, MembersCard } from "../member_card"
-
-export const undefinedMember : Member = {
-    name: "Membro não definido",
-    spotify_track_url: "4AFsRbaLKRWo3dDtjDFA2V"
-};
 
 export type MembersSectionProps = {
     title: string,
@@ -15,7 +10,14 @@ export type MembersSectionProps = {
 }
 
 export const MemberSection = (props: MembersSectionProps) => {
-    if(props.title == 'Membros') while(props.members.length < 12) props.members.push(undefinedMember);
+    if(!props.members.length) props.members.push({name: "Membro não definido"});
+    if(props.title == 'Membros') while(props.members.length < 12) props.members.push({name: "Membro não definido"});
+
+    const [ current, setCurrent ] = useState<number>(0);  
+    const [member, setMember] = useState<Member>(props.members[current]);
+    
+    useEffect(() => setMember(props.members[current]));
+    
 
     const [currentText, setCurrentText] = useState<string>('"hello world"');
 
@@ -24,11 +26,11 @@ export const MemberSection = (props: MembersSectionProps) => {
             <div className="flex flex-col items-center gap-2 z-10 w-10/12 max-w-7xl">
                 <div className='translate-x-4 2xl:translate-x-20 group'>
                     <Window>
-                        <MembersContainer members={props.members} title={props.title} subtitle={props.subtitle} onhover={setCurrentText}/>
+                        <MembersContainer members={props.members} title={props.title} subtitle={props.subtitle} onhover={setCurrentText} onclick={setCurrent}/>
                     </Window>
-                    <div className='absolute top-0 translate-x-4 translate-y-20 lg:translate-x-32 z-10 opacity-0 group-has-[:checked]:opacity-100'>
+                    <div className='absolute top-0 translate-x-4 translate-y-20 lg:translate-x-32 group-has-[:checked]:z-10 opacity-0 group-has-[:checked]:opacity-100 transition-all duration-500'>
                         <Window>
-                            <MembersCard member={undefinedMember} />
+                            <MembersCard onClickLeft={() => setCurrent((props.members.length + current - 1) % props.members.length)} onClickRight={() => setCurrent((current + 1) % props.members.length)} member={member} />
                         </Window>
                     </div>
                 </div>
