@@ -16,7 +16,7 @@ export const Footer = () => {
     return (
         <div className="h-14 bg-w95-darker-grey flex items-center px-2 font-ps2p justify-between">
             <div className="flex gap-2 items-center min-w-fit">
-                <Link href="#" className="h-10 flex items-center gap-2 bg-w95-grey border-w95-dark-grey border-4 border-solid text-xs px-2">
+                <Link href="#" className="h-10 flex items-center gap-2 bg-w95-grey hover:bg-w95-darker-grey border-w95-dark-grey border-4 border-solid text-xs px-2">
                     <Image 
                         src= "/images/home_icon.png"
                         alt="Home Icon"
@@ -24,15 +24,15 @@ export const Footer = () => {
                         height={24}/>
                     Start
                 </Link>
-                <div className="h-12 min-w-40 flex items-center gap-2 bg-w95-grey border-w95-dark-grey border-4 border-solid text-xs px-2">
+                <Link href="#" className="h-12 min-w-40 flex items-center gap-2 bg-w95-grey hover:bg-w95-darker-grey border-w95-dark-grey border-4 border-solid text-xs px-2">
                     <Image 
                         src= "/images/pet_logo.png"
                         alt="PET-SIMC Logo"
                         width={24}
                         height={24}/>
                     PET-SIMC
-                </div>
-                <Link href="https://ufu.br" className="h-12 min-w-40 flex items-center gap-2 bg-w95-grey border-w95-dark-grey border-4 border-solid text-xs px-2">
+                </Link>
+                <Link href="https://ufu.br" className="h-12 min-w-40 flex items-center gap-2 bg-w95-grey hover:bg-w95-darker-grey border-w95-dark-grey border-4 border-solid text-xs px-2">
                     <Image 
                         src= "/images/ufu_logo.png"
                         alt="UFU Logo"
@@ -40,7 +40,7 @@ export const Footer = () => {
                         height={24}/>
                     UFU
                 </Link>
-                <Link href="https://facom.ufu.br" className="h-12 min-w-40 flex items-center gap-2 bg-w95-grey border-w95-dark-grey border-4 border-solid text-xs px-2">
+                <Link href="https://facom.ufu.br" className="h-12 min-w-40 flex items-center gap-2 bg-w95-grey hover:bg-w95-darker-grey border-w95-dark-grey border-4 border-solid text-xs px-2">
                         <Image 
                             src= "/images/facom_logo.png"
                             alt="FACOM Logo"

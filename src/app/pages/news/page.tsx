@@ -6,14 +6,14 @@ import Image from "next/image";
 import Link from 'next/link';
 import { Footer } from "@/app/components/footer";
 import { NavBar } from "@/app/components/nav_bar";
-import { Article, NewsContainer } from '@/app/components/news_container';
+import { Article, ContentContainer } from '@/app/components/content_container';
 import { Window } from "@/app/components/window";
 import { useState } from 'react';
 
 const NotFoundArticle : Article = {
   title: "Notícias Não Encontradas",
   date: "Error - Falha de Comunicação",
-  content: "No momento não conseguimos nos conectar ao banco de notícias do PET-SIMC. Caso sua internet esteja funcionando normalmente, favor entrar em contato com um membro do PET-SIMC informando o erro.",
+  body: "No momento não conseguimos nos conectar ao banco de notícias do PET-SIMC. Caso sua internet esteja funcionando normalmente, favor entrar em contato com um membro do PET-SIMC informando o erro.",
   id: "not-found",
   icon: {
     src: "/images/ufu.jpg",
@@ -94,7 +94,7 @@ const News = () => {
                 return (
                   <>
                     <div className='z-10 translate-x-2 2xl:translate-x-20 flex basis-full'>
-                      <NewsContainer news={element} />
+                      <ContentContainer content={element} />
                     </div>
                     <div className={ 'basis-full' + (index % 2 ? ' flex justify-end max-w-7xl' : ' -translate-x-40')}>
                       <Window>

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useEffect, useState } from "react";
 import { CarouselRadioButton } from "./CarouselRadioButton";
 import { cropText } from "@/app/helpers/cropText";
-import { Article } from "../news_container";
+import { Article } from "../content_container";
 
 export type LastNewsContainerProps = {
   news: Article[]
@@ -33,7 +33,7 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
 
             <div className="flex items-center justify-between px-2">
               <div className="flex justify-center items-center p-1 bg-w95-grey">
-                <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey'>
+                <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey hover:bg-w95-light-grey/60'>
                   <Image 
                     src="/images/left_arrow.svg" 
                     alt="Previous News Icon"
@@ -48,7 +48,7 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
               </div>
 
               <div className="flex justify-center items-center p-1 bg-w95-grey">
-                <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey'>
+                <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey hover:bg-w95-light-grey/60'>
                   <Image 
                     src="/images/right_arrow.svg" 
                     alt="Next News Icon"
@@ -77,7 +77,7 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
             <h2 className='font-ps2p text-xs max-w-md text-black/50'>{currentNews.date}</h2>
           </div>
           <p className='max-w-md'>
-            <span>{cropText(currentNews.content, 400)} </span>
+            <span>{cropText(currentNews.body, 400)} </span>
             <Link href={'/pages/news#' + currentNews.id} className="text-black/50">Leia mais</Link>
         </p>
         </div>
@@ -92,7 +92,7 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
 
           <div className="flex items-center justify-between px-2">
             <div className="flex justify-center items-center p-1 bg-w95-grey">
-              <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey' onClick={() => setCurrent( (props.news.length + current - 1) % props.news.length )}>
+              <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey hover:bg-w95-light-grey/60' onClick={() => setCurrent( (props.news.length + current - 1) % props.news.length )}>
                 <Image 
                   src="/images/left_arrow.svg" 
                   alt="Previous News Icon"
@@ -107,7 +107,7 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
             </div>
 
             <div className="flex justify-center items-center p-1 bg-w95-grey">
-              <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey' onClick={() => setCurrent((current + 1) % props.news.length)}>
+              <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey hover:bg-w95-light-grey/60' onClick={() => setCurrent((current + 1) % props.news.length)}>
                 <Image 
                   src="/images/right_arrow.svg" 
                   alt="Next News Icon"

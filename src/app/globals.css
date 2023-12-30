@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
     height: 100%;
 }
 
@@ -12,7 +12,7 @@ body {
     background-image: url('./assets/pattern.png');
     background-image: url('./assets/pattern.png'), linear-gradient(#559CEE, #91B4E980);
 
-    
+
     background-blend-mode: lighten, normal;
     background-attachment: fixed;
 
@@ -23,4 +23,30 @@ body {
 
     display: flex;
     flex-direction: column;
+}
+
+
+.glitch {
+    animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch {
+
+    0% {
+        color: #FF0000C0;
+        transform: translate(2px, 1px) skew(0deg);
+    }
+
+    5% {
+        transform: translate(-2px, 1px) skew(0deg);
+    }
+
+    50% {
+        color: #0000FFC0;
+        transform: translate(-2px, -1px) skew(0deg);
+    }
+
+    55% {
+        transform: translate(-2px, -1px) skew(0deg);
+    }
 }
