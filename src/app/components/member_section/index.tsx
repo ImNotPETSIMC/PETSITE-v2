@@ -5,23 +5,27 @@ import { Member, MemberCard } from "../member_card"
 import { Tutor, TutorCard } from "../tutor_card"
 
 export type MembersSectionProps = {
-    title: string,
-    subtitle: string,
-    second_title: string,
-    second_subtitle: string,
-    members: Member[],
-    tutors: Tutor[],
-    quantity: number
+    members: {
+        title: string,
+        subtitle: string,
+        minQuantity: number,
+        content: Member[]
+    }
+    tutors: {
+        title: string,
+        subtitle: string,
+        content: Tutor[]
+    }
 }
 
-export const MemberSection = (props: MembersSectionProps) => {
-    while (props.members.length < props.quantity) props.members.push({ name: "Membro não definido" });
-    if (!props.tutors.length) props.tutors.push({ name: "Tutor não definido" });
+export const MemberSection = ({members, tutors} : MembersSectionProps) => {
+    while (members.content.length < members.minQuantity) members.content.push({ name: "Membro não definido" });
+    if (!tutors.content.length) tutors.content.push({ name: "Tutor não definido" });
 
     const [hideMemberCard, setHideMemberCard] = useState<boolean>(true);
     const [hideTutorCard, setHideTutorCard] = useState<boolean>(true);
-    const [member, setMember] = useState<Member>(props.members[0]);
-    const [tutor, setTutor] = useState<Member>(props.tutors[0]);
+    const [member, setMember] = useState<Member>(members.content[0]);
+    const [tutor, setTutor] = useState<Member>(tutors.content[0]);
     const [text, setText] = useState<string>("hello world");
 
     return (
@@ -29,9 +33,9 @@ export const MemberSection = (props: MembersSectionProps) => {
             <div className="flex flex-col items-center gap-10 z-10 w-10/12 max-w-7xl">
                 <Window>
                     <MembersContainer
-                        members={props.members}
-                        title={props.title}
-                        subtitle={props.subtitle}
+                        members={members.content}
+                        title={members.title}
+                        subtitle={members.subtitle}
                         onhover={setText}
                         onclick={setHideMemberCard}
                     />
@@ -40,8 +44,8 @@ export const MemberSection = (props: MembersSectionProps) => {
                     {!hideMemberCard &&
                         <Window onclose={() => setHideMemberCard(true)}>
                             <MemberCard
-                                onClickLeft={() => setMember(props.members[(props.members.length + props.members.indexOf(member) - 1) % props.members.length])}
-                                onClickRight={() => setMember(props.members[(props.members.indexOf(member) + 1) % props.members.length])}
+                                onClickLeft={() => setMember(members.content[(members.content.length + members.content.indexOf(member) - 1) % members.content.length])}
+                                onClickRight={() => setMember(members.content[(members.content.indexOf(member) + 1) % members.content.length])}
                                 member={member}
                             />
                         </Window>
@@ -57,9 +61,9 @@ export const MemberSection = (props: MembersSectionProps) => {
 
                 <Window>
                     <MembersContainer
-                        members={props.tutors}
-                        title={props.second_title}
-                        subtitle={props.second_subtitle}
+                        members={tutors.content}
+                        title={tutors.title}
+                        subtitle={tutors.subtitle}
                         onhover={setText}
                         onclick={setHideTutorCard}
                     />
@@ -68,8 +72,8 @@ export const MemberSection = (props: MembersSectionProps) => {
                     {!hideTutorCard &&
                         <Window onclose={() => setHideTutorCard(true)}>
                             <TutorCard
-                                onClickLeft={() => setMember(props.members[(props.members.length + props.members.indexOf(member) - 1) % props.members.length])}
-                                onClickRight={() => setMember(props.members[(props.members.indexOf(member) + 1) % props.members.length])}
+                                onClickLeft={() => setTutor(tutors.content[(tutors.content.length + tutors.content.indexOf(tutor) - 1) % tutors.content.length])}
+                                onClickRight={() => setTutor(tutors.content[(tutors.content.indexOf(tutor) + 1) % tutors.content.length])}
                                 member={tutor}
                             />
                         </Window>

@@ -11,6 +11,9 @@ import { FolderButtonProps } from '@/app/components/folder_button';
 import { InfoContainer } from '@/app/components/info_container';
 import { exMembersPetsimc, exTutorsPetsimc, membersPetsimc, tutorPetsimc } from '@/app/assets/texts';
 import { MemberSection } from '@/app/components/member_section'
+import { useState } from 'react';
+import { Tutor } from '@/app/components/tutor_card';
+import { Member } from '@/app/components/member_card';
 
 const folderButtons: FolderButtonProps[] = [
   {
@@ -64,6 +67,11 @@ const folderButtons: FolderButtonProps[] = [
 ];
 
 const Members = () => {
+  const [ members, setMembers ] = useState<Member[]>([]);
+  const [ tutors, setTutors ] = useState<Tutor[]>([]);
+  const [ exMembers, setExMembers ] = useState<Member[]>([]);
+  const [ exTutors, setExTutors ] = useState<Tutor[]>([]);
+
   
   return (
     <>
@@ -147,7 +155,11 @@ const Members = () => {
 
             <div className='basis-full' />
 
-            <MemberSection members={[]} title='Membros' subtitle='Membros atuais do PET-SIMC' quantity={12} second_title={'Tutor'} second_subtitle={'Tutor atual do PET-SIMC'} tutors={[]}/>
+            <MemberSection members={{title: 'Membros', subtitle:'Membros atuais do PET-SIMC', minQuantity: 12, content: members}} tutors={{title: 'Tutor', subtitle: 'Tutor atual do PET-SIMC', content: tutors}} />
+
+            <div className='basis-full' />
+
+            <MemberSection members={{title: 'Ex-Membros', subtitle:'Ex-Membros do PET-SIMC', minQuantity: 1, content: exMembers}} tutors={{title: 'Ex-Tutores', subtitle: 'Ex-Tutores do PET-SIMC', content: exTutors}} />
 
             <div className='basis-full' />
           </div>
