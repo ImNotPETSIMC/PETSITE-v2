@@ -2,19 +2,17 @@
 
 import '../../globals.css';
 
-import Image from "next/image";
-import Link from 'next/link';
+import { useState } from 'react';
+import { exMembersPetsimc, exTutorsPetsimc, membersPetsimc, tutorPetsimc } from '@/app/assets/texts';
+import { FolderButtonProps } from '@/app/components/folder_button';
+import { InfoContainer } from '@/app/components/info_container';
+import { MemberSection } from '@/app/pages/members/components/member_section'
 import { Footer } from "@/app/components/footer";
 import { NavBar } from "@/app/components/nav_bar";
 import { Window } from "@/app/components/window";
-import { FolderButtonProps } from '@/app/components/folder_button';
-import { InfoContainer } from '@/app/components/info_container';
-import { exMembersPetsimc, exTutorsPetsimc, membersPetsimc, tutorPetsimc } from '@/app/assets/texts';
-import { MemberSection } from '@/app/components/member_section'
-import { useState } from 'react';
-import { Tutor } from '@/app/components/tutor_card';
-import { Member } from '@/app/components/member_card';
 import { Header } from '@/app/components/header';
+import { Tutor } from '@/app/pages/members/components/tutor_card';
+import { Member } from '@/app/pages/members/components/member_card';
 
 const folderButtons: FolderButtonProps[] = [
   {

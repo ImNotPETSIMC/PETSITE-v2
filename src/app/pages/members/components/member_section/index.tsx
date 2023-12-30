@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { MembersContainer } from "../members_container"
-import { Window } from "../window"
+import { Window } from "../../../../components/window"
 import { Member, MemberCard } from "../member_card"
 import { Tutor, TutorCard } from "../tutor_card"
 
