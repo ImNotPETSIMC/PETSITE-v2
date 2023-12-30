@@ -10,61 +10,60 @@ import { Window } from "@/app/components/window";
 import { FolderButtonProps } from '@/app/components/folder_button';
 import { InfoContainer } from '@/app/components/info_container';
 import { exMembersPetsimc, exTutorsPetsimc, membersPetsimc, tutorPetsimc } from '@/app/assets/texts';
-import { MembersContainer } from '@/app/components/members_container';
-import { MemberSection } from '@/app/components/member_section';
+import { MemberSection } from '@/app/components/member_section'
 
+const folderButtons: FolderButtonProps[] = [
+  {
+    name: "info-text",
+    title: "Membros",
+    id: "members",
+    text: membersPetsimc,
+    icon: {
+      src: "/images/folder_red_file.png",
+      alt: "Members Icon",
+      width: 75,
+      height: 75
+    }
+  },
+  {
+    name: "info-text",
+    title: "Ex-Membros",
+    id: "ex_members",
+    text: exMembersPetsimc,
+    icon: {
+      src: "/images/folder_green_file.png",
+      alt: "Ex-Members Icon",
+      width: 75,
+      height: 75
+    }
+  },
+  {
+    name: "info-text",
+    title: "Tutor",
+    id: "tutor",
+    text: tutorPetsimc,
+    icon: {
+      src: "/images/folder_blue_file.png",
+      alt: "Tutor Icon",
+      width: 75,
+      height: 75
+    }
+  },
+  {
+    name: "info-text",
+    title: "Ex-Tutores",
+    id: "ex-tutor",
+    text: exTutorsPetsimc,
+    icon: {
+      src: "/images/folder_yellow_file.png",
+      alt: "Ex-Tutors Icon",
+      width: 75,
+      height: 75
+    }
+  },
+];
 
 const Members = () => {
-  const folderButtons: FolderButtonProps[] = [
-    {
-      name: "info-text",
-      title: "Membros",
-      id: "members",
-      text: membersPetsimc,
-      icon: {
-        src: "/images/folder_red_file.png",
-        alt: "Members Icon",
-        width: 75,
-        height: 75
-      }
-    },
-    {
-      name: "info-text",
-      title: "Ex-Membros",
-      id: "ex_members",
-      text: exMembersPetsimc,
-      icon: {
-        src: "/images/folder_green_file.png",
-        alt: "Ex-Members Icon",
-        width: 75,
-        height: 75
-      }
-    },
-    {
-      name: "info-text",
-      title: "Tutor",
-      id: "tutor",
-      text: tutorPetsimc,
-      icon: {
-        src: "/images/folder_blue_file.png",
-        alt: "Tutor Icon",
-        width: 75,
-        height: 75
-      }
-    },
-    {
-      name: "info-text",
-      title: "Ex-Tutores",
-      id: "ex-tutor",
-      text: exTutorsPetsimc,
-      icon: {
-        src: "/images/folder_yellow_file.png",
-        alt: "Ex-Tutors Icon",
-        width: 75,
-        height: 75
-      }
-    },
-  ];
   
   return (
     <>
