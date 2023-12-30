@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { MembersContainer } from "../members_container"
 import { Window } from "../window"
-import { Member, MembersCard } from "../member_card"
+import { Member, MemberCard } from "../member_card"
 
 export type MembersSectionProps = {
     title: string,
@@ -35,7 +35,7 @@ export const MemberSection = (props: MembersSectionProps) => {
                         <div className='relative bottom-1/4 -right-20 transition-all duration-500'>
                             {!hideCard && 
                                 <Window onclose={() => setHideCard(true)}>
-                                    <MembersCard 
+                                    <MemberCard 
                                         onClickLeft={() => setMember(props.members[(props.members.length + props.members.indexOf(member) - 1) % props.members.length])} 
                                         onClickRight={() => setMember(props.members[(props.members.indexOf(member) + 1) % props.members.length])} 
                                         member={member} 

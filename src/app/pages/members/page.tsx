@@ -147,7 +147,13 @@ const Members = () => {
 
             <div className='basis-full' />
 
-            <MemberSection members={[{name: "A"}, {name: "B"}, {name: "C"}]} title='Membros' subtitle='Membros atuais do PET-SIMC' quantity={12}/>
+            <MemberSection members={[]} title='Membros' subtitle='Membros atuais do PET-SIMC' quantity={12}/>
+          
+            <div className='basis-full' />
+
+            <MemberSection members={[]} title='Tutor' subtitle='Tutor do PET-SIMC' quantity={1}/>
+
+            <div className='basis-full' />
           </div>
         </div>
       </main>

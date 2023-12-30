@@ -20,13 +20,13 @@ export type Member = {
     projects?: string[];
 }
 
-export type MembersCardProps = {
+export type MemberCardProps = {
     member: Member,
     onClickLeft?: MouseEventHandler<HTMLButtonElement>,
     onClickRight?: MouseEventHandler<HTMLButtonElement>,
 }
 
-export const MembersCard = (props: MembersCardProps) => {
+export const MemberCard = (props: MemberCardProps) => {
     return ( 
         <div className='flex font-ps2p py-8 gap-8 p-4 '>
             <div className="flex justify-center items-center">
