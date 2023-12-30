@@ -17,7 +17,7 @@ export const MembersContainer = (props: MembersContainerProps) => {
                 <h1 className='text-3xl'>{props.title}</h1>
                 <p className='text-black/50'>{props.subtitle}</p>
             </div>
-            <div className='flex items-center flex-wrap justify-between gap-8 py-10'>
+            <div className='flex flex-wrap justify-center gap-8 py-10'>
                 {props.members.map((element, index) => 
                     <MemberButton 
                         key={element.name + index} 

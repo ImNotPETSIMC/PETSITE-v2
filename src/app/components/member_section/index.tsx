@@ -18,9 +18,9 @@ export const MemberSection = (props: MembersSectionProps) => {
     const [ text, setText ] = useState<string>("hello world");
 
     return (
-        <div className="flex flex-col basis-full">
-            <div className="flex flex-col items-center gap-2 z-10 w-10/12 max-w-7xl">
-                <div className='translate-x-4 2xl:translate-x-20 group'>
+        <div className="translate-x-4 2xl:translate-x-20 flex flex-col basis-full">
+            <div className="flex flex-col items-center gap-10 z-10 w-10/12 max-w-7xl">
+                <div className='group'>
                     <div>
                         <Window>
                             <MembersContainer 
@@ -46,7 +46,7 @@ export const MemberSection = (props: MembersSectionProps) => {
                     </div>
                 <div>
                 <Window>
-                    <div className='font-ps2p text-lg py-4 px-8 z-10'>
+                    <div className='font-ps2p text-lg py-4 px-8 z-10 w-max '>
                     <p className='text-w95-blue flex'>printf<span className='text-[#009ED0]'>(<span className='text-black'>"{text}"</span>)</span></p>
                     </div>
                 </Window>

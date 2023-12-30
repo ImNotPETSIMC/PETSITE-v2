@@ -57,7 +57,7 @@ export const MembersCard = (props: MembersCardProps) => {
             <div className="flex flex-col gap-4 items-center">
                 <Image alt={"PET-SIMC's Photo"} src={props.member.photo ? ("data:image/jpeg;base64," + props.member.photo) : "/images/undefined_member.png"} width={300} height={300} className="aspect-square border-w95-grey border-8 border-solid"/>
                 <div className="flex justify-between gap-2 flex-wrap">
-                    <Link className='bg-w95-grey border-4 border-solid border-w95-darker-grey hover:brightness-90 p-2' href={props.member.github_url ? props.member.github_url : "https://github.com"}>
+                    <Link className={'bg-w95-grey border-4 border-solid border-w95-darker-grey p-2' + (props.member.github_url ? "hover:brightness-90" : " grayscale brightness-50")} href={props.member.github_url ? props.member.github_url : "https://github.com"}>
                         <Image
                         src="/images/github_logo.png"
                         width={40}
@@ -65,7 +65,7 @@ export const MembersCard = (props: MembersCardProps) => {
                         alt="Github's Logo"
                         />
                     </Link>
-                    <Link className='bg-w95-grey border-4 border-solid border-w95-darker-grey hover:brightness-90 p-2' href={props.member.linkedin_url ? props.member.linkedin_url : "https://linkedin.com"}>
+                    <Link className={'bg-w95-grey border-4 border-solid border-w95-darker-grey p-2' + (props.member.linkedin_url ? "hover:brightness-90" : " grayscale brightness-50")} href={props.member.linkedin_url ? props.member.linkedin_url : "https://linkedin.com"}>
                         <Image
                         src="/images/linkedin_logo.png"
                         width={40}
@@ -73,7 +73,7 @@ export const MembersCard = (props: MembersCardProps) => {
                         alt="Linkedin's Logo"
                         />
                     </Link>
-                    <Link className={'bg-w95-grey border-4 border-solid border-w95-darker-grey hover:brightness-90 p-2 disabled'} href={props.member.lattes_url ? props.member.lattes_url : "https://www.lattes.cnpq.br"}>
+                    <Link className={'bg-w95-grey border-4 border-solid border-w95-darker-grey p-2' + (props.member.lattes_url ? "hover:brightness-90" : " grayscale brightness-50")} href={props.member.lattes_url ? props.member.lattes_url : "https://www.lattes.cnpq.br"}>
                         <Image
                         src="/images/lattes_logo.png"
                         width={40}
@@ -81,7 +81,7 @@ export const MembersCard = (props: MembersCardProps) => {
                         alt="Latte's Logo"
                         />
                     </Link>
-                    <Link className='bg-w95-grey border-4 border-solid border-w95-darker-grey hover:brightness-90 p-2' href={props.member.instagram_url ? props.member.instagram_url : "https://instagram.com"}>
+                    <Link className={'bg-w95-grey border-4 border-solid border-w95-darker-grey p-2 ' + (props.member.instagram_url ? "hover:brightness-90" : "grayscale brightness-50")} href={props.member.instagram_url ? props.member.instagram_url : "https://instagram.com"}>
                         <Image
                         src="/images/instagram_logo.png"
                         width={40}
