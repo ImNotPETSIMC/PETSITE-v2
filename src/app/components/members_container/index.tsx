@@ -1,12 +1,13 @@
 import { Dispatch, SetStateAction } from "react"
-import { MemberButton, MemberButtonProps } from "../member_button"
+import { MemberButton } from "../member_button"
+import { Member } from "../member_card"
 
 export type MembersContainerProps = {
     title: string,
     subtitle: string,
-    members: MemberButtonProps[],
+    members: Member[],
     onhover: Dispatch<SetStateAction<string>>,
-    onclick: Dispatch<SetStateAction<number>>
+    onclick: Dispatch<SetStateAction<boolean>>
 }
 
 export const MembersContainer = (props: MembersContainerProps) => {
@@ -17,7 +18,15 @@ export const MembersContainer = (props: MembersContainerProps) => {
                 <p className='text-black/50'>{props.subtitle}</p>
             </div>
             <div className='flex items-center flex-wrap justify-between gap-8 py-10'>
-                {props.members.map((element, index) => { return <MemberButton  onclick={() => props.onclick(index)} key={element.name} {...element} onmouseover={() => props.onhover('"' + element.name + '"')} onmouseout={() => props.onhover('"hello world"')} />})}
+                {props.members.map((element) => 
+                    <MemberButton 
+                        key={element.name} 
+                        {...element} 
+                        onclick={() => props.onclick(false)} 
+                        onmouseout={() => props.onhover("hello world")}
+                        onmouseover={() => props.onhover(element.name)}
+                    />)
+                }
             </div>
         </div>
     )

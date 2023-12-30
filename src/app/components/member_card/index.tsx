@@ -3,7 +3,7 @@ import Link from "next/link";
 import { MouseEventHandler } from "react";
 
 export type Member = {
-    name?: string;
+    name: string;
     photo?: string;
     admission_year?: number;
     course_curriculum?: 2016 | 2022;
