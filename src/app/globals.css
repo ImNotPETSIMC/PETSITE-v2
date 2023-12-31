@@ -12,7 +12,6 @@ body {
     background-image: url('./assets/pattern.png');
     background-image: url('./assets/pattern.png'), linear-gradient(#559CEE, #91B4E980);
 
-
     background-blend-mode: lighten, normal;
     background-attachment: fixed;
 
@@ -23,6 +22,15 @@ body {
 
     display: flex;
     flex-direction: column;
+}
+
+body.dark {
+    background: #00000080;
+    background-image: url('./assets/dark_pattern.png');
+    background-image: linear-gradient(#000000b0, #00000028), url('./assets/dark_pattern.png');
+
+    background-blend-mode: normal, normal;
+    background-attachment: fixed;
 }
 
 

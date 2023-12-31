@@ -23,11 +23,11 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
         <div className='flex flex-col max-w-xl p-8 gap-8'>
           <div>
             <h1 className='font-ps2p text-2xl max-w-md'>{currentNews.title}</h1>
-            <h2 className='font-ps2p text-xs max-w-md text-black/50'>{currentNews.date}</h2>
+            <h2 className='font-ps2p text-xs max-w-md text-black/50 dark:text-white/50'>{currentNews.date}</h2>
           </div>
           <p className='max-w-md'>
             <span>{cropText(currentNews.body, 400)} </span>
-            <Link href={'/pages/news#' + currentNews.id} className="text-black/50">Leia mais</Link>
+            <Link href={'/pages/news#' + currentNews.id} className="text-black/50 dark:text-white/50">Leia mais</Link>
         </p>
         </div>
         
@@ -52,7 +52,7 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
             </div>
 
             <div className='flex gap-8'>
-              { props.news.map((element, index) => <CarouselRadioButton id={element.id + "_news"} name="recent_news" selected={index == current} onclick={() => setCurrent((index))}/>) }
+              { props.news.map((element, index) => <CarouselRadioButton key={element.id + "_news"} id={element.id + "_news"} name="recent_news" selected={index == current} onclick={() => setCurrent((index))}/>) }
             </div>
 
             <div className="flex justify-center items-center p-1 bg-w95-grey">

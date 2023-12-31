@@ -25,7 +25,7 @@ export type TutorCardProps = {
 
 export const TutorCard = (props: TutorCardProps) => {
     return ( 
-        <div className='flex font-ps2p py-8 gap-8 p-4 '>
+        <div className='flex font-ps2p py-8 gap-8 p-4 dark:bg-black'>
             <div className="flex justify-center items-center">
                 <button onClick={props.onClickLeft} className='h-60 w-12 flex justify-center items-center bg-w95-light-grey hover:bg-w95-light-grey/60 border-8 border-solid border-w95-grey'>
                     <Image 
@@ -40,13 +40,13 @@ export const TutorCard = (props: TutorCardProps) => {
                 <div className="flex flex-col items-center gap-8 grow">
                     <div className="text-center">
                         <h1 className='text-2xl'>{props.member.name ? props.member.name : "Membro Não Definido"}</h1>
-                        <h2 className='text-sm text-black/50'>{props.member.status ? (props.member.status + " do PET-SIMC") : "undefined" }</h2>
+                        <h2 className='text-sm text-black/50 dark:text-white/50'>{props.member.status ? (props.member.status + " do PET-SIMC") : "undefined" }</h2>
                     </div>
                     <div className="flex flex-col gap-4 text-xs">
-                        <p>📅 - Ingresso no PET:    <span className={'text-black/50 ' + (props.member.admission_year     ? "" : "glitch")}>{props.member.admission_year    ? props.member.admission_year            : "undefined"}</span></p>
-                        <p>🏙️ - Naturalidade:       <span className={'text-black/50 ' + (props.member.place_of_birth     ? "" : "glitch")}>{props.member.place_of_birth    ? props.member.place_of_birth            : "undefined"}</span></p>
-                        <p>🏛️ - Área:               <span className={'text-black/50 ' + (props.member.area               ? "" : "glitch")}>{props.member.area              ? props.member.area                      : "undefined"}</span></p>
-                        <p>🎓 - Disciplinas         <span className={'text-black/50 ' + (props.member.disciplines        ? "" : "glitch")}>{props.member.disciplines       ? props.member.disciplines.join(", ")    : "undefined"}</span></p>
+                        <p>📅 - Ingresso no PET:    <span className={'text-black/50 dark:text-white/50 ' + (props.member.admission_year     ? "" : "glitch")}>{props.member.admission_year    ? props.member.admission_year            : "undefined"}</span></p>
+                        <p>🏙️ - Naturalidade:       <span className={'text-black/50 dark:text-white/50 ' + (props.member.place_of_birth     ? "" : "glitch")}>{props.member.place_of_birth    ? props.member.place_of_birth            : "undefined"}</span></p>
+                        <p>🏛️ - Área:               <span className={'text-black/50 dark:text-white/50 ' + (props.member.area               ? "" : "glitch")}>{props.member.area              ? props.member.area                      : "undefined"}</span></p>
+                        <p>🎓 - Disciplinas         <span className={'text-black/50 dark:text-white/50 ' + (props.member.disciplines        ? "" : "glitch")}>{props.member.disciplines       ? props.member.disciplines.join(", ")    : "undefined"}</span></p>
                     </div>
                 </div>
                 <Link className={'flex justify-center max-w-60 px-8 py-4 text-black/80 bg-w95-light-grey border-4 border-solid border-w95-darker-grey items-center gap-4' + (props.member.email ? "hover:brightness-90" : " grayscale brightness-100")} href={props.member.email ? "mailto:"+props.member.email : ""}>

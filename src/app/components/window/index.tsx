@@ -28,7 +28,7 @@ export const Window = (props: WindowProps) => {
                     />
                 </button>
             </div>
-            <div className={"bg-white" + ((minimized || closed) ? " hidden" : "")}>
+            <div className={"dark:bg-black/80 dark:text-white bg-white" + ((minimized || closed) ? " hidden" : "")}>
                 {props.children}
             </div>
         </div>

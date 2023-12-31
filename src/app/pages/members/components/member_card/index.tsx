@@ -28,7 +28,7 @@ export type MemberCardProps = {
 
 export const MemberCard = (props: MemberCardProps) => {
     return ( 
-        <div className='flex font-ps2p py-8 gap-8 p-4 '>
+        <div className='flex font-ps2p py-8 gap-8 p-4 dark:bg-black'>
             <div className="flex justify-center items-center">
                 <button onClick={props.onClickLeft} className='h-60 w-12 flex justify-center items-center bg-w95-light-grey hover:bg-w95-light-grey/60 border-8 border-solid border-w95-grey'>
                     <Image 
@@ -42,15 +42,15 @@ export const MemberCard = (props: MemberCardProps) => {
             <div className="flex flex-col gap-8 grow items-center">
                 <div className="text-center">
                     <h1 className='text-2xl'>{props.member.name ? props.member.name : "Membro Não Definido"}</h1>
-                    <h2 className='text-sm text-black/50'>{props.member.status ? (props.member.status + " do PET-SIMC") : "undefined" }</h2>
+                    <h2 className='text-sm text-black/50 dark:text-white/50'>{props.member.status ? (props.member.status + " do PET-SIMC") : "undefined" }</h2>
                 </div>
                 <div className="flex flex-col gap-4 text-xs">
-                    <p>📅 - Ingresso no PET:    <span className={'text-black/50 ' + (props.member.admission_year     ? "" : "glitch")}>{props.member.admission_year    ? props.member.admission_year       : "undefined"}</span></p>
-                    <p>🏛️ - Pilar Preferido:    <span className={'text-black/50 ' + (props.member.favorite_pillar    ? "" : "glitch")}>{props.member.favorite_pillar   ? props.member.favorite_pillar      : "undefined"}</span></p>
-                    <p>🎓 - Grade Disciplinar:  <span className={'text-black/50 ' + (props.member.course_curriculum  ? "" : "glitch")}>{props.member.course_curriculum ? props.member.course_curriculum    : "undefined"}</span></p>
-                    <p>🏙️ - Naturalidade:       <span className={'text-black/50 ' + (props.member.place_of_birth     ? "" : "glitch")}>{props.member.place_of_birth    ? props.member.place_of_birth       : "undefined"}</span></p>
-                    <p>🎈 - Hobby:              <span className={'text-black/50 ' + (props.member.hobby              ? "" : "glitch")}>{props.member.hobby             ? props.member.hobby                : "undefined"}</span></p>
-                    <p>🛠️ - Projetos:           <span className={'text-black/50 ' + (props.member.projects           ? "" : "glitch")}>{props.member.projects           ? props.member.projects.join(", ") : "undefined"}</span></p>
+                    <p>📅 - Ingresso no PET:    <span className={'text-black/50 dark:text-white/50 ' + (props.member.admission_year     ? "" : "glitch")}>{props.member.admission_year    ? props.member.admission_year       : "undefined"}</span></p>
+                    <p>🏛️ - Pilar Preferido:    <span className={'text-black/50 dark:text-white/50 ' + (props.member.favorite_pillar    ? "" : "glitch")}>{props.member.favorite_pillar   ? props.member.favorite_pillar      : "undefined"}</span></p>
+                    <p>🎓 - Grade Disciplinar:  <span className={'text-black/50 dark:text-white/50 ' + (props.member.course_curriculum  ? "" : "glitch")}>{props.member.course_curriculum ? props.member.course_curriculum    : "undefined"}</span></p>
+                    <p>🏙️ - Naturalidade:       <span className={'text-black/50 dark:text-white/50 ' + (props.member.place_of_birth     ? "" : "glitch")}>{props.member.place_of_birth    ? props.member.place_of_birth       : "undefined"}</span></p>
+                    <p>🎈 - Hobby:              <span className={'text-black/50 dark:text-white/50 ' + (props.member.hobby              ? "" : "glitch")}>{props.member.hobby             ? props.member.hobby                : "undefined"}</span></p>
+                    <p>🛠️ - Projetos:           <span className={'text-black/50 dark:text-white/50 ' + (props.member.projects           ? "" : "glitch")}>{props.member.projects           ? props.member.projects.join(", ") : "undefined"}</span></p>
                 </div>
                 <iframe style={{borderRadius: "12px"}} src={"https://open.spotify.com/embed/track/" + props.member.spotify_track_url + "?utm_source=generator"} width="100%" height="152" allow="autoplay;" loading="lazy"></iframe>
             </div>

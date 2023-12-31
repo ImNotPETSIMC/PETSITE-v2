@@ -56,7 +56,7 @@ export const MemberSection = ({ members, tutors }: MembersSectionProps) => {
                 <div className="flex flex-col items-center gap-10 z-10 w-10/12 max-w-7xl">
                     <Window>
                         <div className='font-ps2p text-lg py-4 px-8 z-10 w-max '>
-                            <p className='text-w95-blue flex'>printf<span className='text-[#009ED0]'>(<span className='text-black'>"{text}"</span>)</span></p>
+                            <p className='text-w95-blue flex'>printf<span className='text-[#009ED0]'>(<span className='text-black dark:text-white'>"{text}"</span>)</span></p>
                         </div>
                     </Window>
 
