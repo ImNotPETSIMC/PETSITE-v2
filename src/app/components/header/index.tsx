@@ -19,6 +19,7 @@ export const Header = () => {
                                     width={300}
                                     height={300}
                                     alt="PET-SIMC's Logo"
+                                    className="dark:drop-shadow-[2px_4px_6px_#FFFFFF40]"
                                 />
                             </div>
                         </Window>
@@ -70,7 +71,7 @@ export const Header = () => {
                                 width={60}
                                 height={60}
                                 alt="PETCast's Logo"
-                                className='mix-blend-multiply'
+                                className='mix-blend-multiply dark:drop-shadow-[2px_4px_6px_white]'
                             />
                         </Link>
                         <div className='bg-white w-full px-2'>PETCast</div>
