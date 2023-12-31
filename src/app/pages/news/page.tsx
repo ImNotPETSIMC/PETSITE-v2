@@ -8,17 +8,7 @@ import { NavBar } from "@/app/components/nav_bar";
 import { Header } from '@/app/components/header';
 import { BreakWindow } from '@/app/components/break_window';
 import { Article, ContentContainer } from '@/app/components/content_container';
-
-export const NotFoundArticle : Article = {
-  title: "Notícias Não Encontradas",
-  date: "Error - Falha de Comunicação",
-  body: "No momento não conseguimos nos conectar ao banco de notícias do PET-SIMC. Caso sua internet esteja funcionando normalmente, favor entrar em contato com um membro do PET-SIMC informando o erro.",
-  id: "not-found",
-  icon: {
-    src: "/images/ufu.jpg",
-    alt: "Logo do PET-SIMC"
-  }
-}
+import { NotFoundArticle } from '@/app/assets/missing_article';
 
 const News = () => {
   const [articles, setArticles] = useState<Article[]>([{...NotFoundArticle}]);

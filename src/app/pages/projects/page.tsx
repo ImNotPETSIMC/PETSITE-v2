@@ -6,9 +6,9 @@ import { useState } from 'react';
 import { Footer } from "@/app/components/footer";
 import { NavBar } from "@/app/components/nav_bar";
 import { Header } from '@/app/components/header';
-import { NotFoundArticle } from '../news/page';
 import { Article, ContentContainer } from '@/app/components/content_container';
 import { BreakWindow } from '@/app/components/break_window';
+import { NotFoundArticle } from '@/app/assets/missing_article';
 
 const Projects = () => {
   const [articles, setArticles] = useState<Article[]>([{...NotFoundArticle}]);
