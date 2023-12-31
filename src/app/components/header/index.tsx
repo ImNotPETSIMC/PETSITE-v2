@@ -5,22 +5,24 @@ import Link from "next/link"
 export const Header = () => {
     return (
         <>
-            <div className='flex gap-5 -translate-x-2 basis-full '>
-                <Window>
-                    <div className='font-monoton 2xl:py-28 2xl:px-52 py-20 px-16 text-8xl text-w95-blue text-center'> PET-SIMC </div>
-                </Window>
-
-                <div className='translate-y-10'>
+            <div className='flex gap-5 -translate-x-2 max-w-screen-2xl basis-full justify-between'>
+                <div className="flex gap-5">
                     <Window>
-                        <div className='p-10'>
-                            <Image
-                                src="/images/pet_logo.png"
-                                width={300}
-                                height={300}
-                                alt="PET-SIMC's Logo"
-                            />
-                        </div>
+                        <div className='font-monoton 2xl:py-28 2xl:px-52 py-20 px-16 text-8xl text-w95-blue text-center'> PET-SIMC </div>
                     </Window>
+
+                    <div className='translate-y-14'>
+                        <Window>
+                            <div className='p-10'>
+                                <Image
+                                    src="/images/pet_logo.png"
+                                    width={300}
+                                    height={300}
+                                    alt="PET-SIMC's Logo"
+                                />
+                            </div>
+                        </Window>
+                    </div>
                 </div>
 
                 <div className='translate-y-10 font-ps2p flex flex-col gap-4'>
@@ -75,6 +77,7 @@ export const Header = () => {
                     </div>
                 </div>
             </div>
+            <div className="basis-full"></div>
         </>
     )
 }
