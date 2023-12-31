@@ -49,6 +49,19 @@ export const Header = () => {
                     </div>
 
                     <div className='flex flex-col items-center text-[0.5rem] text-center border-white border border-solid h-fit bg-white/20'>
+                        <Link className='p-2' href='https://www.instagram.com/petsimc/'>
+                            <Image
+                                src="/images/instagram_logo.png"
+                                width={60}
+                                height={60}
+                                alt="Instagram's Logo"
+                                className='mix-blend-multiply'
+                            />
+                        </Link>
+                        <div className='bg-white w-full px-2'>Instagram</div>
+                    </div>
+
+                    <div className='flex flex-col items-center text-[0.5rem] text-center border-white border border-solid h-fit bg-white/20'>
                         <Link className='p-2' href='#'>
                             <Image
                                 src="/images/petcast_logo.png"
