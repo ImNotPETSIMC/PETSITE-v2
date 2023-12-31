@@ -13,3 +13,7 @@ export const exMembersPetsimc = "Os ex-membros do PET (Programa de Educação Tu
 export const tutorPetsimc = "O tutor atual do PET é uma pessoa altamente capacitada e experiente, com vasto conhecimento e habilidades em sua área de especialização e outras. Ele é responsável por orientar e apoiar os membros atuais do programa, ajudando-os a se desenvolver profissionalmente e a atingir seus objetivos acadêmicos e pessoais.";
 
 export const exTutorsPetsimc = "O ex-tutor do PET é uma pessoa talentosa e bem-sucedida que serviu como mentor e guia para os membros do programa durante sua época como tutor. Durante seu tempo como tutor, demonstrou uma paixão incomparável pela educação e pelo desenvolvimento dos membros do programa. Ajudou muitos a alcançarem seus objetivos acadêmicos e pessoais, e deixou uma marca duradoura na comunidade do PET.";
+
+export const aboutText = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia sunt eveniet, rerum est harum at esse illo molestias labore, blanditiis qui soluta, neque laborum officiis impedit voluptatem obcaecati quisquam pariatur!"
+
+export const historyText = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia sunt eveniet, rerum est harum at esse illo molestias labore, blanditiis qui soluta, neque laborum officiis impedit voluptatem obcaecati quisquam pariatur!"

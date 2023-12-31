@@ -8,10 +8,10 @@ import { NavBar } from "@/app/components/nav_bar";
 import { Window } from "@/app/components/window";
 import { Header } from '@/app/components/header';
 import { BreakWindow } from '@/app/components/break_window';
+import { aboutText } from '@/app/assets/texts';
 
 
 const About = () => {
-  const aboutText = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia sunt eveniet, rerum est harum at esse illo molestias labore, blanditiis qui soluta, neque laborum officiis impedit voluptatem obcaecati quisquam pariatur!"
 
   return (
     <>
