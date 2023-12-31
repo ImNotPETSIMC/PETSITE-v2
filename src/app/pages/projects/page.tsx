@@ -25,12 +25,12 @@ const Projects = () => {
             {
               articles.map((element, index) => {
                 return (
-                  <>
+                  <div key={element.id} className='flex flex-col basis-full gap-4'>
                     <div className='z-10 translate-x-2 2xl:translate-x-20 flex basis-full'>
                       <ContentContainer content={element} />
                     </div>
                     <BreakWindow end={index % 2 ? true : false}/>
-                  </>
+                  </div>
                 )
               })
             }

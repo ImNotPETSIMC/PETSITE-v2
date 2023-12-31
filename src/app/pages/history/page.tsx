@@ -32,6 +32,7 @@ const History = () => {
                       width={600}
                       height={200}
                       className='aspect-video max-w-full'
+                      style={{height: "auto", width: "auto"}}
                     />
                   </div>
                 </div>

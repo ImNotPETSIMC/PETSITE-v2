@@ -20,6 +20,7 @@ export const Header = () => {
                                     height={300}
                                     alt="PET-SIMC's Logo"
                                     className="dark:drop-shadow-[2px_4px_6px_#FFFFFF40]"
+                                    style={{height: "auto", width: "auto"}}
                                 />
                             </div>
                         </Window>
@@ -34,6 +35,7 @@ export const Header = () => {
                                 width={60}
                                 height={60}
                                 alt="Youtube's Logo"
+                                style={{height: "auto", width: "auto"}}
                             />
                         </Link>
                         <div className='bg-white w-full px-2'>Youtube</div>
@@ -46,6 +48,7 @@ export const Header = () => {
                                 width={60}
                                 height={60}
                                 alt="Spotify's Logo"
+                                style={{height: "auto", width: "auto"}}
                             />
                         </Link>
                         <div className='bg-white w-full px-2'>Spotify</div>
@@ -59,6 +62,7 @@ export const Header = () => {
                                 height={60}
                                 alt="Instagram's Logo"
                                 className='mix-blend-multiply'
+                                style={{height: "auto", width: "auto"}}
                             />
                         </Link>
                         <div className='bg-white w-full px-2'>Instagram</div>
@@ -72,6 +76,7 @@ export const Header = () => {
                                 height={60}
                                 alt="PETCast's Logo"
                                 className='mix-blend-multiply dark:drop-shadow-[2px_4px_6px_white]'
+                                style={{height: "auto", width: "auto"}}
                             />
                         </Link>
                         <div className='bg-white w-full px-2'>PETCast</div>

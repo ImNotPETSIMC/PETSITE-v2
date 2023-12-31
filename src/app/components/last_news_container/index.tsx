@@ -37,6 +37,7 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
             width={400}
             height={200}
             className='aspect-video max-w-xl'
+            style={{height: "auto", width: "auto"}}
           />
 
           <div className="flex items-center justify-between px-2">
@@ -47,6 +48,7 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
                   alt="Previous News Icon"
                   width={12}
                   height={12}
+                  style={{height: "auto", width: "auto"}}
                 />
               </button>
             </div>
@@ -62,6 +64,7 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
                   alt="Next News Icon"
                   width={12}
                   height={12}
+                  style={{height: "auto", width: "auto"}}
                 />
               </button>
             </div>

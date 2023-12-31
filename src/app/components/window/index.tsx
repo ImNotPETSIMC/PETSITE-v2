@@ -25,6 +25,7 @@ export const Window = (props: WindowProps) => {
                         alt="X"
                         width={16}
                         height={16}
+                        style={{height: "auto", width: "auto"}}
                     />
                 </button>
             </div>

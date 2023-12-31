@@ -21,7 +21,8 @@ export const Footer = () => {
                         src= "/images/home_icon.png"
                         alt="Home Icon"
                         width={24}
-                        height={24}/>
+                        height={24}
+                        style={{height: "auto", width: "auto"}}/>
                     Start
                 </Link>
                 <Link href="#" className="h-12 min-w-40 flex items-center gap-2 bg-w95-grey dark:bg-white/20 hover:bg-w95-darker-grey hover:dark:bg-white/40 border-w95-dark-grey border-4 border-solid text-xs px-2">
@@ -30,7 +31,8 @@ export const Footer = () => {
                         alt="PET-SIMC Logo"
                         width={24}
                         height={24}
-                        className="dark:bg-white rounded-full"/>
+                        className="dark:bg-white rounded-full"
+                        style={{height: "auto", width: "auto"}}/>
                     PET-SIMC
                 </Link>
                 <Link href="https://ufu.br" className="h-12 min-w-40 flex items-center gap-2 bg-w95-grey dark:bg-white/20 hover:bg-w95-darker-grey hover:dark:bg-white/40 border-w95-dark-grey border-4 border-solid text-xs px-2">
@@ -38,7 +40,8 @@ export const Footer = () => {
                         src= "/images/ufu_logo.png"
                         alt="UFU Logo"
                         width={24}
-                        height={24}/>
+                        height={24}
+                        style={{height: "auto", width: "auto"}}/>
                     UFU
                 </Link>
                 <Link href="https://facom.ufu.br" className="h-12 min-w-40 flex items-center gap-2 bg-w95-grey dark:bg-white/20 hover:bg-w95-darker-grey hover:dark:bg-white/40 border-w95-dark-grey border-4 border-solid text-xs px-2">
@@ -46,7 +49,8 @@ export const Footer = () => {
                             src= "/images/facom_logo.png"
                             alt="FACOM Logo"
                             width={24}
-                            height={24}/>
+                            height={24}
+                            style={{height: "auto", width: "auto"}}/>
                         FACOM
 
                 </Link>

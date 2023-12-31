@@ -33,6 +33,7 @@ export const TutorCard = (props: TutorCardProps) => {
                         alt="Previous Member Icon"
                         width={20}
                         height={20}
+                        style={{height: "auto", width: "auto"}}
                     />
                 </button>
             </div>
@@ -56,11 +57,19 @@ export const TutorCard = (props: TutorCardProps) => {
                     width={20}
                     height={20}
                     alt="Github's Logo"
+                    style={{height: "auto", width: "auto"}}
                     />
                 </Link>
             </div>
             <div className="flex flex-col gap-4 items-center">
-                <Image alt={"PET-SIMC's Photo"} src={props.member.photo ? ("data:image/jpeg;base64," + props.member.photo) : "/images/undefined_member.png"} width={300} height={300} className="aspect-square border-w95-grey border-8 border-solid"/>
+                <Image 
+                    alt={"PET-SIMC's Photo"} 
+                    src={props.member.photo ? ("data:image/jpeg;base64," + props.member.photo) : "/images/undefined_member.png"} 
+                    width={300} 
+                    height={300} 
+                    className="aspect-square border-w95-grey border-8 border-solid"
+                    style={{height: "auto", width: "auto"}}
+                />
                 <div className="flex justify-between gap-2 flex-wrap">
                     <Link className={'bg-w95-grey border-4 border-solid border-w95-darker-grey p-2' + (props.member.github_url ? "hover:brightness-90" : " grayscale brightness-50")} href={props.member.github_url ? props.member.github_url : "https://github.com"}>
                         <Image
@@ -68,6 +77,7 @@ export const TutorCard = (props: TutorCardProps) => {
                         width={40}
                         height={40}
                         alt="Github's Logo"
+                        style={{height: "auto", width: "auto"}}
                         />
                     </Link>
                     <Link className={'bg-w95-grey border-4 border-solid border-w95-darker-grey p-2' + (props.member.linkedin_url ? "hover:brightness-90" : " grayscale brightness-50")} href={props.member.linkedin_url ? props.member.linkedin_url : "https://linkedin.com"}>
@@ -76,6 +86,7 @@ export const TutorCard = (props: TutorCardProps) => {
                         width={40}
                         height={40}
                         alt="Linkedin's Logo"
+                        style={{height: "auto", width: "auto"}}
                         />
                     </Link>
                     <Link className={'bg-w95-grey border-4 border-solid border-w95-darker-grey p-2' + (props.member.lattes_url ? "hover:brightness-90" : " grayscale brightness-50")} href={props.member.lattes_url ? props.member.lattes_url : "https://www.lattes.cnpq.br"}>
@@ -84,6 +95,7 @@ export const TutorCard = (props: TutorCardProps) => {
                         width={40}
                         height={40}
                         alt="Latte's Logo"
+                        style={{height: "auto", width: "auto"}}
                         />
                     </Link>
                     <Link className={'bg-w95-grey border-4 border-solid border-w95-darker-grey p-2 ' + (props.member.instagram_url ? "hover:brightness-90" : "grayscale brightness-50")} href={props.member.instagram_url ? props.member.instagram_url : "https://instagram.com"}>
@@ -92,6 +104,7 @@ export const TutorCard = (props: TutorCardProps) => {
                         width={40}
                         height={40}
                         alt="Instagram's Logo"
+                        style={{height: "auto", width: "auto"}}
                         />
                     </Link>
                 </div>
@@ -103,6 +116,7 @@ export const TutorCard = (props: TutorCardProps) => {
                         alt="Next Member Icon"
                         width={20}
                         height={20}
+                        style={{height: "auto", width: "auto"}}
                     />
                 </button>
             </div>

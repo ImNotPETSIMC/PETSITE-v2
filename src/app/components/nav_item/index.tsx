@@ -17,6 +17,7 @@ export const NavItem = (props: NavItemProps) => {
         <Link href={props.url}>
             <div className='bg-[#E1E2E9] dark:bg-[#32333E] hover:bg-w95-grey flex gap-4 p-2 font-ps2p text-xs items-center w-48 h-16 drop-shadow-md'>
                     <Image 
+                        style={{height: "auto", width: "auto"}}
                         {...props.icon}
                     />
                     {props.name}

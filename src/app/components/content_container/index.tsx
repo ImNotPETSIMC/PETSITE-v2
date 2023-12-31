@@ -41,6 +41,7 @@ export const ContentContainer = (props: ContentContainerProps) => {
               width={600}
               height={200}
               className='aspect-video max-w-md group group-has-[:checked]:max-w-full'
+              style={{height: "auto", width: "auto"}}
             />
           </div>
 
