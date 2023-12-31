@@ -8,6 +8,7 @@ import { Footer } from "@/app/components/footer";
 import { NavBar } from "@/app/components/nav_bar";
 import { Window } from "@/app/components/window";
 import { Header } from '@/app/components/header';
+import { BreakWindow } from '@/app/components/break_window';
 
 
 const History = () => {
@@ -47,13 +48,7 @@ const History = () => {
               </Window>
             </div>
 
-            <div className={'basis-full flex justify-end max-w-7xl'}>
-              <Window>
-                <div className='font-ps2p text-lg py-4 px-8'>
-                  <p className='text-w95-blue flex'>printf<span className='text-[#009ED0]'>(<span className='text-black'>"hello world"</span>)</span></p>
-                </div>
-              </Window>
-            </div>
+            <BreakWindow end />
           </div>
         </div>
       </main>

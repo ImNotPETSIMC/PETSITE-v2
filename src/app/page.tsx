@@ -2,8 +2,7 @@
 
 import './globals.css';
 
-import Image from 'next/image';
-import Link from 'next/link';
+import { BreakWindow } from './components/break_window';
 import { Window } from './components/window';
 import { NavBar } from './components/nav_bar';
 import { LastNewsContainer } from './components/last_news_container';
@@ -103,28 +102,15 @@ const Home = () => {
               </Window>
             </div>
 
-            <div className='basis-full -translate-x-40'>
-              <Window>
-                <div className='font-ps2p text-lg py-4 px-8'>
-                  <p className='text-w95-blue flex'>printf<span className='text-[#009ED0]'>(<span className='text-black'>"hello world"</span>)</span></p>
-                </div>
-              </Window>
-            </div>
+            <BreakWindow end/>
 
             <div className='z-10 w-10/12 max-w-7xl min-w-fit translate-x-4 2xl:translate-x-20 flex basis-full'>
               <Window>
                 <LastNewsContainer news={[]} />
               </Window>
             </div>
-            <div className='basis-full' />
 
-            <div className='basis-full flex justify-end max-w-7xl'>
-              <Window>
-                <div className='font-ps2p text-lg py-4 px-8'>
-                  <p className='text-w95-blue flex'>printf<span className='text-[#009ED0]'>(<span className='text-black'>"hello world"</span>)</span></p>
-                </div>
-              </Window>
-            </div>
+            <BreakWindow/>
           </div>
         </div>
       </main>
