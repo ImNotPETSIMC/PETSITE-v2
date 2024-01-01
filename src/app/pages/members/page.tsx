@@ -2,7 +2,6 @@
 
 import '../../globals.css';
 
-import { useState } from 'react';
 import { exMembersPetsimc, exTutorsPetsimc, membersPetsimc, tutorPetsimc } from '@/app/assets/texts';
 import { FolderButtonProps } from '@/app/components/folder_button';
 import { InfoContainer } from '@/app/components/info_container';
@@ -11,8 +10,6 @@ import { Footer } from "@/app/components/footer";
 import { NavBar } from "@/app/components/nav_bar";
 import { Window } from "@/app/components/window";
 import { Header } from '@/app/components/header';
-import { Tutor } from '@/app/pages/members/components/tutor_card';
-import { Member } from '@/app/pages/members/components/member_card';
 import { BreakWindow } from '@/app/components/break_window';
 import { useQuery } from 'react-query';
 import { fetchData } from '@/app/helpers/fetchData';
@@ -71,8 +68,8 @@ const folderButtons: FolderButtonProps[] = [
 const Members = () => {
   const { data:memberData, isSuccess:isMemberSuccess, isLoading:isMemberLoading } = useQuery({ queryKey: ['members'], queryFn: () => fetchData('/member', { status: "Membro" })});
   const { data:tutorData, isSuccess:isTutorSuccess, isLoading:isTutorLoading } = useQuery({ queryKey: ['tutor'], queryFn: () => fetchData('/member', { status: "Ex-Membro"})});
-  const { data:exMemberData, isSuccess:isExMemberSuccess, isLoading:isExMemberLoading } = useQuery({ queryKey: ['members'], queryFn: () => fetchData('/member', { status: "Ex-Membro" })});
-  const { data:exTutorData, isSuccess:isExTutorSuccess, isLoading:isExTutorLoading } = useQuery({ queryKey: ['tutor'], queryFn: () => fetchData('/member', { status: "Ex-Membro"})});
+  const { data:exMemberData, isSuccess:isExMemberSuccess, isLoading:isExMemberLoading } = useQuery({ queryKey: ['ex-members'], queryFn: () => fetchData('/member', { status: "Ex-Membro" })});
+  const { data:exTutorData, isSuccess:isExTutorSuccess, isLoading:isExTutorLoading } = useQuery({ queryKey: ['ex-tutor'], queryFn: () => fetchData('/member', { status: "Ex-Membro"})});
   
   return (
     <>
