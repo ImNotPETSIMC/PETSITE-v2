@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import { monda, monoton, ps2p } from './fonts'
 import './globals.css'
+import { QueryProvider } from './provider'
+
 
 export const metadata: Metadata = {
   title: 'PET-SIMC - Website',
@@ -18,7 +20,9 @@ export default function RootLayout({
 }) {  
   return (
     <html lang="en">
-      <body className={`${monda.variable} ${ps2p.variable} ${monoton.variable}`}>{children}</body>
+        <QueryProvider>
+          <body className={`${monda.variable} ${ps2p.variable} ${monoton.variable}`}>{children}</body>
+        </QueryProvider>
     </html>
   )
 }
