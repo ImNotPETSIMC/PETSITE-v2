@@ -19,7 +19,7 @@ export const MemberButton = (props: MemberButtonProps) => {
             <div className="flex justify-center items-center basis-[12%] min-w-24">
                 <label htmlFor={memberButtonId} className="relative border-4 border-w95-blue border-solid font-ps2p text-xs text-center" onClick={props.onclick} onMouseOver={props.onmouseover} onMouseOut={props.onmouseout}>
                     <Image 
-                        src={props.photo ? props.photo : "/images/undefined_member.png"} 
+                        src={props.photo ? ("data:image/jpeg;base64," + props.photo) : "/images/undefined_member.png"} 
                         alt={(props.name ? props.name : "Membro Não Definido") + "'s Photo"} 
                         width={150} 
                         height={150} 
