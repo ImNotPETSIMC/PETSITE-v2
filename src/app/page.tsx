@@ -11,8 +11,12 @@ import { Footer } from './components/footer';
 import { aboutPetsimc, joinPetsimc, objectivesPetsimc, pillarsPetsimc } from './assets/texts';
 import { FolderButtonProps } from './components/folder_button';
 import { Header } from './components/header';
+import { useQuery } from 'react-query';
+import { fetchData } from './helpers/fetchData'
 
 const Home = () => {
+  const news = useQuery({ queryKey: ['last-news'], queryFn: () => fetchData('/news'), initialData: { news : []}},);
+
   const folderButtons: FolderButtonProps[] = [
     {
       name: "info-text",
@@ -106,7 +110,7 @@ const Home = () => {
 
             <div className='z-10 w-10/12 max-w-7xl min-w-fit translate-x-4 2xl:translate-x-20 flex basis-full'>
               <Window>
-                <LastNewsContainer news={[]} />
+                <LastNewsContainer news={(news.isSuccess ? news.data.news : [])} />
               </Window>
             </div>
 
