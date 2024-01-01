@@ -94,7 +94,7 @@ const Members = () => {
 
             <BreakWindow />
 
-            <MemberSection members={{ title: 'Ex-Membros', subtitle: 'Ex-Membros do PET-SIMC', minQuantity: 1, content: (isExMemberSuccess ? exMemberData.members : []) }} tutors={{ title: 'Ex-Tutores', subtitle: 'Ex-Tutores do PET-SIMC', content: (isExTutorSuccess ? exTutorData.members : []) }} />
+            <MemberSection members={{ title: 'Ex-Membros', subtitle: 'Ex-Membros do PET-SIMC', minQuantity: 1, content: (isExMemberSuccess ? exMemberData.members : []) }} loading={isExMemberLoading || isExTutorLoading } tutors={{ title: 'Ex-Tutores', subtitle: 'Ex-Tutores do PET-SIMC', content: (isExTutorSuccess ? exTutorData.members : []) }} />
 
             <BreakWindow end />
           </div>
