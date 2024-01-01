@@ -67,9 +67,9 @@ const folderButtons: FolderButtonProps[] = [
 
 const Members = () => {
   const member = useQuery({ queryKey: ['members'], queryFn: () => fetchData('/member', { status: "Membro" })});
-  const tutor = useQuery({ queryKey: ['tutor'], queryFn: () => fetchData('/member', { status: "Ex-Membro"})});
+  const tutor = useQuery({ queryKey: ['tutor'], queryFn: () => fetchData('/tutor', { status: "Tutor"})});
   const exMembers = useQuery({ queryKey: ['ex-members'], queryFn: () => fetchData('/member', { status: "Ex-Membro" })});
-  const exTutors = useQuery({ queryKey: ['ex-tutor'], queryFn: () => fetchData('/member', { status: "Ex-Membro"})});
+  const exTutors = useQuery({ queryKey: ['ex-tutor'], queryFn: () => fetchData('/tutor', { status: "Ex-Tutor"})});
   
   return (
     <>

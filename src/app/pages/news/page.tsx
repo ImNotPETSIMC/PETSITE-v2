@@ -2,17 +2,18 @@
 
 import '../../globals.css';
 
-import { useState } from 'react';
+
 import { Footer } from "@/app/components/footer";
 import { NavBar } from "@/app/components/nav_bar";
 import { Header } from '@/app/components/header';
 import { BreakWindow } from '@/app/components/break_window';
 import { Article, ContentContainer } from '@/app/components/content_container';
 import { NotFoundArticle } from '@/app/assets/missing_article';
+import { useQuery } from 'react-query';
+import { fetchData } from '@/app/helpers/fetchData';
 
 const News = () => {
-  const [articles, setArticles] = useState<Article[]>([{...NotFoundArticle}]);
-  // const [articles, setArticles] = useState<Article[]>([{...NotFoundArticle, loading: true}]);
+  const news = useQuery({ queryKey: ['news'], queryFn: () => fetchData('/news'), initialData: { news : [{...NotFoundArticle, loading: true}]}},);
 
   return (
     <>
@@ -21,8 +22,9 @@ const News = () => {
           <NavBar />
           <div className='flex flex-wrap gap-4'>
             <Header />
-            {
-              articles.map((element, index) => {
+            { 
+              news.isSuccess &&
+              (news.data.news as Article[]).map((element, index) => {
                 return (
                   <div key={element.id} className='flex flex-col basis-full gap-4'>
                     <div className='z-10 translate-x-2 2xl:translate-x-20 flex basis-full'>
