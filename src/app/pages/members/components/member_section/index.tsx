@@ -15,10 +15,11 @@ export type MembersSectionProps = {
         title: string,
         subtitle: string,
         content: Tutor[]
-    }
+    },
+    loading?: boolean
 }
 
-export const MemberSection = ({ members, tutors }: MembersSectionProps) => {
+export const MemberSection = ({ members, tutors, loading }: MembersSectionProps) => {
     while (members.content.length < members.minQuantity) members.content.push({ name: "Membro não definido" });
     if (!tutors.content.length) tutors.content.push({ name: "Tutor não definido" });
 
@@ -30,7 +31,7 @@ export const MemberSection = ({ members, tutors }: MembersSectionProps) => {
 
     return (
         <>
-            <div className="translate-x-4 2xl:translate-x-20 flex flex-col basis-full">
+            <div className={"translate-x-4 2xl:translate-x-20 flex flex-col basis-full " + (loading && "blur")} >
                 <div className="flex flex-col items-center gap-10 z-10 w-10/12 max-w-7xl">
                     <Window>
                         <MembersContainer
