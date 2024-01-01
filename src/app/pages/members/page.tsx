@@ -66,10 +66,10 @@ const folderButtons: FolderButtonProps[] = [
 ];
 
 const Members = () => {
-  const { data:memberData, isSuccess:isMemberSuccess, isLoading:isMemberLoading } = useQuery({ queryKey: ['members'], queryFn: () => fetchData('/member', { status: "Membro" })});
-  const { data:tutorData, isSuccess:isTutorSuccess, isLoading:isTutorLoading } = useQuery({ queryKey: ['tutor'], queryFn: () => fetchData('/member', { status: "Ex-Membro"})});
-  const { data:exMemberData, isSuccess:isExMemberSuccess, isLoading:isExMemberLoading } = useQuery({ queryKey: ['ex-members'], queryFn: () => fetchData('/member', { status: "Ex-Membro" })});
-  const { data:exTutorData, isSuccess:isExTutorSuccess, isLoading:isExTutorLoading } = useQuery({ queryKey: ['ex-tutor'], queryFn: () => fetchData('/member', { status: "Ex-Membro"})});
+  const member = useQuery({ queryKey: ['members'], queryFn: () => fetchData('/member', { status: "Membro" })});
+  const tutor = useQuery({ queryKey: ['tutor'], queryFn: () => fetchData('/member', { status: "Ex-Membro"})});
+  const exMembers = useQuery({ queryKey: ['ex-members'], queryFn: () => fetchData('/member', { status: "Ex-Membro" })});
+  const exTutors = useQuery({ queryKey: ['ex-tutor'], queryFn: () => fetchData('/member', { status: "Ex-Membro"})});
   
   return (
     <>
@@ -87,11 +87,11 @@ const Members = () => {
 
             <BreakWindow end />
 
-            <MemberSection members={{ title: 'Membros', subtitle: 'Membros atuais do PET-SIMC', minQuantity: 12, content: (isMemberSuccess ? memberData.members : [])}} loading={isMemberLoading || isTutorLoading } tutors={{ title: 'Tutor', subtitle: 'Tutor atual do PET-SIMC', content: (isTutorSuccess ? tutorData.members : []) }} />
+            <MemberSection members={{ title: 'Membros', subtitle: 'Membros atuais do PET-SIMC', minQuantity: 12, content: (member.isSuccess ? member.data.members : [])}} loading={member.isLoading || tutor.isLoading } tutors={{ title: 'Tutor', subtitle: 'Tutor atual do PET-SIMC', content: (tutor.isSuccess ? tutor.data.members : []) }} />
 
             <BreakWindow />
 
-            <MemberSection members={{ title: 'Ex-Membros', subtitle: 'Ex-Membros do PET-SIMC', minQuantity: 1, content: (isExMemberSuccess ? exMemberData.members : []) }} loading={isExMemberLoading || isExTutorLoading } tutors={{ title: 'Ex-Tutores', subtitle: 'Ex-Tutores do PET-SIMC', content: (isExTutorSuccess ? exTutorData.members : []) }} />
+            <MemberSection members={{ title: 'Ex-Membros', subtitle: 'Ex-Membros do PET-SIMC', minQuantity: 1, content: (exMembers.isSuccess ? exMembers.data.members : []) }} loading={exMembers.isLoading || exTutors.isLoading } tutors={{ title: 'Ex-Tutores', subtitle: 'Ex-Tutores do PET-SIMC', content: (exTutors.isSuccess? exTutors.data.members : []) }} />
 
             <BreakWindow end />
           </div>
