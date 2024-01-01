@@ -1,13 +1,14 @@
 import { Dispatch, SetStateAction } from "react"
 import { MemberButton } from "../member_button"
 import { Member } from "../member_card"
+import { Tutor } from "../tutor_card"
 
 export type MembersContainerProps = {
     title: string,
     subtitle: string,
     members: Member[],
     onhover: Dispatch<SetStateAction<string>>,
-    onclick: Dispatch<SetStateAction<boolean>>
+    onclick: [Dispatch<SetStateAction<boolean>>, Dispatch<SetStateAction<Member>> | Dispatch<SetStateAction<Tutor>>]
 }
 
 export const MembersContainer = (props: MembersContainerProps) => {
@@ -22,7 +23,7 @@ export const MembersContainer = (props: MembersContainerProps) => {
                     <MemberButton 
                         key={element.name + index} 
                         {...element} 
-                        onclick={() => props.onclick(false)} 
+                        onclick={() => { props.onclick[0](false); props.onclick[1](element)}} 
                         onmouseout={() => props.onhover("hello world")}
                         onmouseover={() => props.onhover(element.name)}
                     />)

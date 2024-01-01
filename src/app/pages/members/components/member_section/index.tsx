@@ -25,7 +25,7 @@ export const MemberSection = ({ members, tutors }: MembersSectionProps) => {
     const [hideMemberCard, setHideMemberCard] = useState<boolean>(true);
     const [hideTutorCard, setHideTutorCard] = useState<boolean>(true);
     const [member, setMember] = useState<Member>(members.content[0]);
-    const [tutor, setTutor] = useState<Member>(tutors.content[0]);
+    const [tutor, setTutor] = useState<Tutor>(tutors.content[0]);
     const [text, setText] = useState<string>("hello world");
 
     return (
@@ -38,7 +38,7 @@ export const MemberSection = ({ members, tutors }: MembersSectionProps) => {
                             title={members.title}
                             subtitle={members.subtitle}
                             onhover={setText}
-                            onclick={setHideMemberCard}
+                            onclick={[setHideMemberCard, setMember]}
                         />
                     </Window>
                     <div className='relative bottom-1/4 -right-20 transition-all duration-500'>
@@ -66,7 +66,7 @@ export const MemberSection = ({ members, tutors }: MembersSectionProps) => {
                             title={tutors.title}
                             subtitle={tutors.subtitle}
                             onhover={setText}
-                            onclick={setHideTutorCard}
+                            onclick={[setHideTutorCard, setTutor]}
                         />
                     </Window>
                     <div className='relative bottom-1/3 transition-all duration-500'>
