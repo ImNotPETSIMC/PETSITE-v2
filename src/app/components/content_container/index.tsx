@@ -31,7 +31,7 @@ export const ContentContainer = (props: ContentContainerProps) => {
             <h2 className='text-xs max-w-md group-has-[:checked]:max-w-full group-has-[:checked]:text-center text-black/50 dark:text-white/50'>{props.content.date}</h2>
           </div>
           <p className='max-w-md group-has-[:checked]:hidden'>{cropText(props.content.body, 400)}</p>
-          <p className='max-w-2xl text-center hidden group-has-[:checked]:block'>{props.content.body}</p>
+          <p className='max-w-2xl text-center hidden group-has-[:checked]:block whitespace-pre-line'>{props.content.body}</p>
         </div>
 
         <div className='flex flex-col p-2 pt-6 gap-8 justify-center order-2 group-has-[:checked]:order-first'>

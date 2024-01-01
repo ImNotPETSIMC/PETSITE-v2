@@ -26,7 +26,7 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
             <h2 className='font-ps2p text-xs max-w-md text-black/50 dark:text-white/50'>{currentNews.date}</h2>
           </div>
           <p className='max-w-md'>
-            <span>{cropText(currentNews.body, 400)} </span>
+            <span className="whitespace-pre-line">{cropText(currentNews.body, 400)} </span>
             <Link href={'/pages/news#' + currentNews.id} className="text-black/50 dark:text-white/50">Leia mais</Link>
         </p>
         </div>
