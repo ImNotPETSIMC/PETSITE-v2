@@ -78,7 +78,7 @@ export const TutorCard = (props: TutorCardProps) => {
                                 style={{ height: "auto", width: "auto" }}
                             />
                         </Link>
-                        <Link className={'p-2 bg-w95-grey border-4 border-solid border-w95-darker-grey' + (props.member.linkedin_url ? "hover:brightness-90" : " grayscale brightness-50")} href={props.member.linkedin_url ? props.member.linkedin_url : "https://linkedin.com"}>
+                        <Link className={'p-2 bg-w95-grey border-4 border-solid border-w95-darker-grey ' + (props.member.linkedin_url ? "hover:brightness-90" : " grayscale brightness-50")} href={props.member.linkedin_url ? props.member.linkedin_url : "https://linkedin.com"}>
                             <Image
                                 src="/images/linkedin_logo.png"
                                 width={40}
@@ -87,7 +87,7 @@ export const TutorCard = (props: TutorCardProps) => {
                                 style={{ height: "auto", width: "auto" }}
                             />
                         </Link>
-                        <Link className={'p-2 bg-w95-grey border-4 border-solid border-w95-darker-grey' + (props.member.lattes_url ? "hover:brightness-90" : " grayscale brightness-50")} href={props.member.lattes_url ? props.member.lattes_url : "https://www.lattes.cnpq.br"}>
+                        <Link className={'p-2 bg-w95-grey border-4 border-solid border-w95-darker-grey ' + (props.member.lattes_url ? "hover:brightness-90" : " grayscale brightness-50")} href={props.member.lattes_url ? props.member.lattes_url : "https://www.lattes.cnpq.br"}>
                             <Image
                                 src="/images/lattes_logo.png"
                                 width={40}
