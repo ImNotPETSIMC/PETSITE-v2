@@ -14,9 +14,9 @@ export const Footer = () => {
     }, [])
 
     return (
-        <div className="h-14 bg-w95-darker-grey dark:bg-black/80 dark:text-white flex items-center px-2 font-ps2p justify-between">
+        <div className="h-14 bg-w95-darker-grey dark:bg-black/80 dark:text-white flex items-center p-2 font-ps2p justify-between">
             <div className="flex gap-2 items-center min-w-fit">
-                <Link href="#" className="h-10 flex items-center gap-2 bg-w95-grey dark:bg-white/20 hover:bg-w95-darker-grey hover:dark:bg-white/40 border-w95-dark-grey border-4 border-solid text-xs px-2">
+                <Link href="#" className="h-10 flex items-center gap-2 bg-w95-grey dark:bg-white/20 hover:bg-w95-darker-grey hover:dark:bg-white/30 border-w95-dark-grey border-4 border-solid text-xs px-2">
                     <Image 
                         src= "/images/home_icon.png"
                         alt="Home Icon"

@@ -24,7 +24,7 @@ export const ContentContainer = (props: ContentContainerProps) => {
 
   return (
     <Window>
-      <div className={'flex group has-[:checked]:flex-col has-[:checked]:items-center gap-2 p-8' + (props.content.loading ? " blur" : "")}>
+      <div className={'flex group has-[:checked]:flex-col has-[:checked]:items-center gap-2 p-12 ' + (props.content.loading ? "blur" : "")}>
         <div className='flex flex-col gap-8 order-1 transition-all items-center'>
           <div className="font-ps2p flex-col flex gap-2">
             <h1 className='text-2xl max-w-md group-has-[:checked]:max-w-full group-has-[:checked]:text-center'>{props.content.title}</h1>

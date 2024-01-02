@@ -9,20 +9,19 @@ export const metadata: Metadata = {
   description: "PETSIMC's Website to get to know projects, members, about and more..."
 }
 
-export const viewport: Viewport = { 
-  initialScale: 0
+export const viewport: Viewport = {
 }
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
-}) {  
+}) {
   return (
-    <html lang="en">
-        <QueryProvider>
-          <body className={`${monda.variable} ${ps2p.variable} ${monoton.variable}`}>{children}</body>
-        </QueryProvider>
+    <html lang="pt-br">
+      <QueryProvider>
+        <body className={`${monda.variable} ${ps2p.variable} ${monoton.variable}`}>{children}</body>
+      </QueryProvider>
     </html>
   )
 }

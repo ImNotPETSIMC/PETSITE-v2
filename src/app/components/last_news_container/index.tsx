@@ -20,7 +20,7 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
   return (
     <>
       <div className='flex'>
-        <div className='flex flex-col max-w-xl p-8 gap-8'>
+        <div className='flex flex-col max-w-xl p-12 gap-8'>
           <div>
             <h1 className='font-ps2p text-2xl max-w-md'>{currentNews.title}</h1>
             <h2 className='font-ps2p text-xs max-w-md text-black/50 dark:text-white/50'>{currentNews.date}</h2>

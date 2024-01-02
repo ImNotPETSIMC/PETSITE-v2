@@ -28,20 +28,19 @@ export type MemberCardProps = {
 
 export const MemberCard = (props: MemberCardProps) => {
     return (
-        <div className='flex font-ps2p py-8 p-4 dark:bg-black w-lg'>
+        <div className='flex justify-between font-ps2p p-2 dark:bg-black'>
             <div className="flex justify-center items-center">
-                <button onClick={props.onClickLeft} className='h-60 w-12 flex justify-center items-center bg-w95-light-grey hover:bg-w95-light-grey/60 border-8 border-solid border-w95-grey'>
+                <button onClick={props.onClickLeft} className='relative h-1/3 w-12 bg-w95-light-grey hover:bg-w95-light-grey/60 border-8 border-w95-grey'>
                     <Image
                         src="/images/left_arrow.svg"
                         alt="Previous Member Icon"
-                        width={20}
-                        height={20}
-                        style={{ height: "auto", width: "auto" }}
+                        fill
+                        className="p-2"
                     />
                 </button>
             </div>
-            <div className="flex p-4">
-                <div className="flex flex-col gap-8 grow items-center w-1/2 p-2">
+            <div className="flex p-8">
+                <div className="flex flex-col p-4 gap-8 items-center">
                     <div className="text-center">
                         <h1 className='text-2xl'>{props.member.name ? props.member.name : "Membro Não Definido"}</h1>
                         <h2 className='text-sm text-black/50 dark:text-white/50'>{props.member.status ? (props.member.status + " do PET-SIMC") : "undefined"}</h2>
@@ -56,8 +55,8 @@ export const MemberCard = (props: MemberCardProps) => {
                     </div>
                     <iframe style={{ borderRadius: "12px" }} src={"https://open.spotify.com/embed/track/" + props.member.spotify_track_url + "?utm_source=generator"} width="100%" height="152" allow="autoplay;" loading="lazy"></iframe>
                 </div>
-                <div className="flex flex-col gap-4 items-center w-1/2 p-2">
-                    <div className="h-80 w-80 relative">
+                <div className="flex flex-col p-4 gap-4 items-center justify-center">
+                    <div className="h-60 w-60 relative">
                         <Image
                             alt={"PET-SIMC's Photo"}
                             src={props.member.photo ? ("data:image/jpeg;base64," + props.member.photo) : "/images/undefined_member.png"}
@@ -65,8 +64,8 @@ export const MemberCard = (props: MemberCardProps) => {
                             fill={true}
                         />
                     </div>
-                    <div className="flex justify-between gap-2 flex-wrap">
-                        <Link className={'p-2 bg-w95-grey border-4 border-solid border-w95-darker-grey p-2' + (props.member.github_url ? "hover:brightness-90" : " grayscale brightness-50")} href={props.member.github_url ? props.member.github_url : "https://github.com"}>
+                    <div className="flex justify-center gap-2">
+                        <Link className={'flex items-center p-2 bg-w95-grey border-4 border-solid border-w95-darker-grey ' + (props.member.github_url ? "hover:brightness-90" : " grayscale brightness-50")} href={props.member.github_url ? props.member.github_url : "https://github.com"}>
                             <Image
                                 src="/images/github_logo.png"
                                 width={40}
@@ -75,7 +74,7 @@ export const MemberCard = (props: MemberCardProps) => {
                                 style={{ height: "auto", width: "auto" }}
                             />
                         </Link>
-                        <Link className={'p-2 bg-w95-grey border-4 border-solid border-w95-darker-grey p-2' + (props.member.linkedin_url ? "hover:brightness-90" : " grayscale brightness-50")} href={props.member.linkedin_url ? props.member.linkedin_url : "https://linkedin.com"}>
+                        <Link className={'flex items-center p-2 bg-w95-grey border-4 border-solid border-w95-darker-grey' + (props.member.linkedin_url ? "hover:brightness-90" : " grayscale brightness-50")} href={props.member.linkedin_url ? props.member.linkedin_url : "https://linkedin.com"}>
                             <Image
                                 src="/images/linkedin_logo.png"
                                 width={40}
@@ -84,7 +83,7 @@ export const MemberCard = (props: MemberCardProps) => {
                                 style={{ height: "auto", width: "auto" }}
                             />
                         </Link>
-                        <Link className={'p-2 bg-w95-grey border-4 border-solid border-w95-darker-grey p-2' + (props.member.lattes_url ? "hover:brightness-90" : " grayscale brightness-50")} href={props.member.lattes_url ? props.member.lattes_url : "https://www.lattes.cnpq.br"}>
+                        <Link className={'flex items-center p-2 bg-w95-grey border-4 border-solid border-w95-darker-grey' + (props.member.lattes_url ? "hover:brightness-90" : " grayscale brightness-50")} href={props.member.lattes_url ? props.member.lattes_url : "https://www.lattes.cnpq.br"}>
                             <Image
                                 src="/images/lattes_logo.png"
                                 width={40}
@@ -93,7 +92,7 @@ export const MemberCard = (props: MemberCardProps) => {
                                 style={{ height: "auto", width: "auto" }}
                             />
                         </Link>
-                        <Link className={'p-2 bg-w95-grey border-4 border-solid border-w95-darker-grey p-2 ' + (props.member.instagram_url ? "hover:brightness-90" : "grayscale brightness-50")} href={props.member.instagram_url ? props.member.instagram_url : "https://instagram.com"}>
+                        <Link className={'flex items-center p-2 bg-w95-grey border-4 border-solid border-w95-darker-grey ' + (props.member.instagram_url ? "hover:brightness-90" : "grayscale brightness-50")} href={props.member.instagram_url ? props.member.instagram_url : "https://instagram.com"}>
                             <Image
                                 src="/images/instagram_logo.png"
                                 width={40}
@@ -106,13 +105,12 @@ export const MemberCard = (props: MemberCardProps) => {
                 </div>
             </div>
             <div className="flex justify-center items-center">
-                <button onClick={props.onClickRight} className='h-60 w-12 flex justify-center items-center bg-w95-light-grey hover:bg-w95-light-grey/60 border-8 border-solid border-w95-grey'>
+                <button onClick={props.onClickRight} className='relative h-1/3 w-12 bg-w95-light-grey hover:bg-w95-light-grey/60 border-8 border-w95-grey'>
                     <Image
                         src="/images/right_arrow.svg"
                         alt="Next Member Icon"
-                        width={20}
-                        height={20}
-                        style={{ height: "auto", width: "auto" }}
+                        fill
+                        className="p-2"
                     />
                 </button>
             </div>

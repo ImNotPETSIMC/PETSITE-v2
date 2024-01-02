@@ -1,9 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
 
-export const AsideContainer = () => {
+export const Aside = () => {
     return (
-        <div className='font-ps2p flex lg:flex-col flex-row gap-4 text-[0.5rem] items-center w-fit h-fit p-2'>
+        <div className='sticky lg:top-4 z-10 font-ps2p flex lg:flex-col flex-row gap-4 text-[0.5rem] items-center w-fit h-fit p-2'>
             <div className='flex flex-col items-center text-center border-white border border-solid bg-white/20 h-fit w-fit'>
                 <Link className='relative h-20 w-20 p-2' href='https://www.youtube.com/@petsimc3135'>
                     <Image

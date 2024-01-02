@@ -31,8 +31,8 @@ export const MemberSection = ({ members, tutors, loading }: MembersSectionProps)
 
     return (
         <>
-            <div className={"translate-x-4 2xl:translate-x-20 flex flex-col basis-full " + (loading && "blur")} >
-                <div className="flex flex-col items-center gap-10 z-10 w-10/12 max-w-7xl">
+            <div className={"gap-10 flex flex-col items-center" + (loading && "blur")} >
+                <div className="flex flex-col items-center relative">
                     <Window>
                         <MembersContainer
                             members={members.content}
@@ -42,7 +42,7 @@ export const MemberSection = ({ members, tutors, loading }: MembersSectionProps)
                             onclick={[setHideMemberCard, setMember]}
                         />
                     </Window>
-                    <div className='relative bottom-1/4 -right-20 transition-all duration-500'>
+                    <div className='z-10 p-4 absolute -bottom-1/2 lg:-right-24 transition-all duration-500'>
                         {!hideMemberCard &&
                             <Window onclose={() => setHideMemberCard(true)}>
                                 <MemberCard
@@ -54,13 +54,14 @@ export const MemberSection = ({ members, tutors, loading }: MembersSectionProps)
                         }
                     </div>
                 </div>
-                <div className="flex flex-col items-center gap-10 z-10 w-10/12 max-w-7xl">
+                <div className="flex justify-center w-full">
                     <Window>
-                        <div className='font-ps2p text-lg py-4 px-8 z-10 w-max '>
+                        <div className='font-ps2p text-lg py-4 px-8 z-10'>
                             <p className='text-w95-blue flex'>printf<span className='text-[#009ED0]'>(<span className='text-black dark:text-white'>"{text}"</span>)</span></p>
                         </div>
                     </Window>
-
+                </div>
+                <div className="flex flex-col items-center relative">
                     <Window>
                         <MembersContainer
                             members={tutors.content}
@@ -70,7 +71,7 @@ export const MemberSection = ({ members, tutors, loading }: MembersSectionProps)
                             onclick={[setHideTutorCard, setTutor]}
                         />
                     </Window>
-                    <div className='relative bottom-1/3 transition-all duration-500'>
+                    <div className='z-10 p-4 absolute -top-1/2 transition-all duration-500'>
                         {!hideTutorCard &&
                             <Window onclose={() => setHideTutorCard(true)}>
                                 <TutorCard
@@ -83,7 +84,6 @@ export const MemberSection = ({ members, tutors, loading }: MembersSectionProps)
                     </div>
                 </div>
             </div>
-            <div className='basis-full' />
         </>
     )
 }
