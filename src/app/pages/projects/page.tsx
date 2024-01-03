@@ -24,7 +24,7 @@ const folderButtons: FolderButtonProps[] = [
     text: projectsText,
     icon: {
       src: "/images/folder_yellow_file.png",
-      alt: "About Icon",
+      alt: "Projects Icon",
       width: 75,
       height: 75
     },

@@ -25,7 +25,7 @@ const folderButtons: FolderButtonProps[] = [
     text: newsText,
     icon: {
       src: "/images/folder_blue_file.png",
-      alt: "About Icon",
+      alt: "News Icon",
       width: 75,
       height: 75
     },
