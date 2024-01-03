@@ -51,7 +51,7 @@ export const MemberCard = (props: MemberCardProps) => {
                         <p className='dark:text-white/60'>🎓 - Grade Disciplinar:  <span className={'text-black/50 dark:text-white ' + (props.member.course_curriculum ? "" : "glitch")}>{props.member.course_curriculum ? props.member.course_curriculum : "undefined"}</span></p>
                         <p className='dark:text-white/60'>🏙️ - Naturalidade:       <span className={'text-black/50 dark:text-white ' + (props.member.place_of_birth ? "" : "glitch")}>{props.member.place_of_birth ? props.member.place_of_birth : "undefined"}</span></p>
                         <p className='dark:text-white/60'>🎈 - Hobby:              <span className={'text-black/50 dark:text-white ' + (props.member.hobby ? "" : "glitch")}>{props.member.hobby ? props.member.hobby : "undefined"}</span></p>
-                        <p className='dark:text-white/60'>🛠️ - Projetos:           <span className={'text-black/50 dark:text-white ' + (props.member.projects ? "" : "glitch")}>{props.member.projects ? props.member.projects.join(", ") : "undefined"}</span></p>
+                        <p className='dark:text-white/60'>🛠️ - Projetos:           <span className={'text-black/50 dark:text-white ' + (props.member.projects && props.member.projects.length ? "" : "glitch")}>{props.member.projects && props.member.projects.length ? props.member.projects.join(", ") : "undefined"}</span></p>
                     </div>
                     <iframe style={{ borderRadius: "12px" }} src={"https://open.spotify.com/embed/track/" + props.member.spotify_track_url + "?utm_source=generator"} width="100%" height="152" allow="autoplay;" loading="lazy"></iframe>
                 </div>
