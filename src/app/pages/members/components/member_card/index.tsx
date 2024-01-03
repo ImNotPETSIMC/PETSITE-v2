@@ -28,7 +28,7 @@ export type MemberCardProps = {
 
 export const MemberCard = (props: MemberCardProps) => {
     return (
-        <div className='flex justify-between font-ps2p p-2 dark:bg-black'>
+        <div className='flex justify-between font-ps2p p-2 dark:bg-stone-950/70 dark:backdrop-blur-xl'>
             <div className="flex justify-center items-center">
                 <button onClick={props.onClickLeft} className='relative h-1/3 w-12 bg-w95-light-grey hover:bg-w95-light-grey/60 border-8 border-w95-grey'>
                     <Image
@@ -43,15 +43,15 @@ export const MemberCard = (props: MemberCardProps) => {
                 <div className="flex flex-col p-4 gap-8 items-center">
                     <div className="text-center">
                         <h1 className='text-2xl max-w-md'>{props.member.name ? props.member.name : "Membro Não Definido"}</h1>
-                        <h2 className='text-sm text-black/50 dark:text-white/50'>{props.member.status ? (props.member.status + " do PET-SIMC") : "undefined"}</h2>
+                        <h2 className='text-sm text-black/50 dark:text-white/60'>{props.member.status ? (props.member.status + " do PET-SIMC") : "undefined"}</h2>
                     </div>
                     <div className="flex flex-col gap-4 text-xs max-w-md">
-                        <p>📅 - Ingresso no PET:    <span className={'text-black/50 dark:text-white/50 ' + (props.member.admission_year ? "" : "glitch")}>{props.member.admission_year ? props.member.admission_year : "undefined"}</span></p>
-                        <p>🏛️ - Pilar Preferido:    <span className={'text-black/50 dark:text-white/50 ' + (props.member.favorite_pillar ? "" : "glitch")}>{props.member.favorite_pillar ? props.member.favorite_pillar : "undefined"}</span></p>
-                        <p>🎓 - Grade Disciplinar:  <span className={'text-black/50 dark:text-white/50 ' + (props.member.course_curriculum ? "" : "glitch")}>{props.member.course_curriculum ? props.member.course_curriculum : "undefined"}</span></p>
-                        <p>🏙️ - Naturalidade:       <span className={'text-black/50 dark:text-white/50 ' + (props.member.place_of_birth ? "" : "glitch")}>{props.member.place_of_birth ? props.member.place_of_birth : "undefined"}</span></p>
-                        <p>🎈 - Hobby:              <span className={'text-black/50 dark:text-white/50 ' + (props.member.hobby ? "" : "glitch")}>{props.member.hobby ? props.member.hobby : "undefined"}</span></p>
-                        <p>🛠️ - Projetos:           <span className={'text-black/50 dark:text-white/50 ' + (props.member.projects ? "" : "glitch")}>{props.member.projects ? props.member.projects.join(", ") : "undefined"}</span></p>
+                        <p className='dark:text-white/60'>📅 - Ingresso no PET:    <span className={'text-black/50 dark:text-white ' + (props.member.admission_year ? "" : "glitch")}>{props.member.admission_year ? props.member.admission_year : "undefined"}</span></p>
+                        <p className='dark:text-white/60'>🏛️ - Pilar Preferido:    <span className={'text-black/50 dark:text-white ' + (props.member.favorite_pillar ? "" : "glitch")}>{props.member.favorite_pillar ? props.member.favorite_pillar : "undefined"}</span></p>
+                        <p className='dark:text-white/60'>🎓 - Grade Disciplinar:  <span className={'text-black/50 dark:text-white ' + (props.member.course_curriculum ? "" : "glitch")}>{props.member.course_curriculum ? props.member.course_curriculum : "undefined"}</span></p>
+                        <p className='dark:text-white/60'>🏙️ - Naturalidade:       <span className={'text-black/50 dark:text-white ' + (props.member.place_of_birth ? "" : "glitch")}>{props.member.place_of_birth ? props.member.place_of_birth : "undefined"}</span></p>
+                        <p className='dark:text-white/60'>🎈 - Hobby:              <span className={'text-black/50 dark:text-white ' + (props.member.hobby ? "" : "glitch")}>{props.member.hobby ? props.member.hobby : "undefined"}</span></p>
+                        <p className='dark:text-white/60'>🛠️ - Projetos:           <span className={'text-black/50 dark:text-white ' + (props.member.projects ? "" : "glitch")}>{props.member.projects ? props.member.projects.join(", ") : "undefined"}</span></p>
                     </div>
                     <iframe style={{ borderRadius: "12px" }} src={"https://open.spotify.com/embed/track/" + props.member.spotify_track_url + "?utm_source=generator"} width="100%" height="152" allow="autoplay;" loading="lazy"></iframe>
                 </div>
