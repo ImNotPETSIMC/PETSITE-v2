@@ -41,7 +41,7 @@ const History = () => {
                     <h1 className='text-2xl max-w-full text-center'>História do PET-SIMC</h1>
                     <h2 className='text-xs max-w-full text-center text-black/50 dark:text-white/50'>PET de Sistemas de Informação de Monte Carmelo</h2>
                   </div>
-                  <p className='max-w-2xl text-center'>{historyText}</p>
+                  <p className='max-w-2xl whitespace-pre-line'>{historyText}</p>
                 </div>
               </div>
             </Window>
