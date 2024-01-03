@@ -42,10 +42,10 @@ export const MemberCard = (props: MemberCardProps) => {
             <div className="flex p-8">
                 <div className="flex flex-col p-4 gap-8 items-center">
                     <div className="text-center">
-                        <h1 className='text-2xl'>{props.member.name ? props.member.name : "Membro Não Definido"}</h1>
+                        <h1 className='text-2xl max-w-md'>{props.member.name ? props.member.name : "Membro Não Definido"}</h1>
                         <h2 className='text-sm text-black/50 dark:text-white/50'>{props.member.status ? (props.member.status + " do PET-SIMC") : "undefined"}</h2>
                     </div>
-                    <div className="flex flex-col gap-4 text-xs">
+                    <div className="flex flex-col gap-4 text-xs max-w-md">
                         <p>📅 - Ingresso no PET:    <span className={'text-black/50 dark:text-white/50 ' + (props.member.admission_year ? "" : "glitch")}>{props.member.admission_year ? props.member.admission_year : "undefined"}</span></p>
                         <p>🏛️ - Pilar Preferido:    <span className={'text-black/50 dark:text-white/50 ' + (props.member.favorite_pillar ? "" : "glitch")}>{props.member.favorite_pillar ? props.member.favorite_pillar : "undefined"}</span></p>
                         <p>🎓 - Grade Disciplinar:  <span className={'text-black/50 dark:text-white/50 ' + (props.member.course_curriculum ? "" : "glitch")}>{props.member.course_curriculum ? props.member.course_curriculum : "undefined"}</span></p>
@@ -55,16 +55,16 @@ export const MemberCard = (props: MemberCardProps) => {
                     </div>
                     <iframe style={{ borderRadius: "12px" }} src={"https://open.spotify.com/embed/track/" + props.member.spotify_track_url + "?utm_source=generator"} width="100%" height="152" allow="autoplay;" loading="lazy"></iframe>
                 </div>
-                <div className="flex flex-col p-4 gap-4 items-center justify-center">
+                 <div className="flex flex-col p-4 gap-4 items-center justify-center">
                     <div className="h-60 w-60 relative">
                         <Image
-                            alt={"PET-SIMC's Photo"}
+                            alt={"PET-SIMC's Member Photo"}
                             src={props.member.photo ? ("data:image/jpeg;base64," + props.member.photo) : "/images/undefined_member.png"}
                             className="aspect-square border-w95-grey border-8 border-solid"
                             fill={true}
                         />
                     </div>
-                    <div className="flex justify-center gap-2">
+                    <div className="flex justify-center gap-2 flex-wrap">
                         <Link className={'flex items-center p-2 bg-w95-grey border-4 border-solid border-w95-darker-grey ' + (props.member.github_url ? "hover:brightness-90" : " grayscale brightness-50")} href={props.member.github_url ? props.member.github_url : "https://github.com"}>
                             <Image
                                 src="/images/github_logo.png"
