@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { monda, monoton, ps2p } from './fonts'
 import './globals.css'
-import { QueryProvider } from './provider'
+import { QueryProvider, ThemesProvider } from './provider'
 
 
 export const metadata: Metadata = {
@@ -18,9 +18,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" suppressHydrationWarning>
       <QueryProvider>
-        <body className={`${monda.variable} ${ps2p.variable} ${monoton.variable}`}>{children}</body>
+        <body className={`${monda.variable} ${ps2p.variable} ${monoton.variable}`}>
+          <ThemesProvider>
+            {children}
+          </ThemesProvider>
+        </body>
       </QueryProvider>
     </html>
   )

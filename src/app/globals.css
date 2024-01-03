@@ -25,15 +25,14 @@ body {
     flex-direction: column;
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background: #00000080;
-        background-image: url('./assets/dark_pattern.png');
-        background-image: linear-gradient(#000000b0, #00000028), url('./assets/dark_pattern.png');
-    
-        background-blend-mode: normal, normal;
-        background-attachment: fixed;
-    }
+html.dark > body {
+    background: #00000080;
+    background-image: url('./assets/dark_pattern.png');
+    background-image: linear-gradient(#000000b0, #00000028), url('./assets/dark_pattern.png');
+
+    background-blend-mode: normal, normal;
+    background-attachment: fixed;
+
 }
 
 

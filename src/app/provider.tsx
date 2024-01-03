@@ -1,5 +1,7 @@
 "use client";
 
+import { ThemeProvider } from 'next-themes';
+import { useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 export const QueryProvider = ({
@@ -15,3 +17,19 @@ export const QueryProvider = ({
         </QueryClientProvider>  
     )
 }
+
+export const ThemesProvider = ({
+    children,
+}: {
+    children: React.ReactNode
+}) => {
+    const [mounted, setMounted] = useState<boolean>(false);
+
+    useEffect(() => {
+        setMounted(true);
+    })
+
+    return (
+        <ThemeProvider attribute='class'>{children}</ThemeProvider>
+    )
+};
