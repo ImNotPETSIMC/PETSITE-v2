@@ -70,13 +70,14 @@ export const Aside = () => {
                 <div className='flex flex-col items-center text-center border-white border border-solid bg-white/20 h-fit w-fit'>
                     <button className='relative h-20 w-20 p-2' onClick={() => theme == "dark" ? setTheme('light') : setTheme("dark")}>
                         <Image
-                            src={theme == "dark" ? "/images/sun.svg" : "/images/moon.svg"}
+                            src={theme == "dark" ? "/images/moon.svg" : "/images/sun.svg"}
                             fill
-                            alt="Opposite Theme's Logo"
+                            alt="Current Theme's Logo"
+                            className='dark:drop-shadow-[2px_4px_6px_white]'
                             style={{ padding: "1rem" }}
                         />
                     </button>
-                    <div className='bg-white w-full px-2'>{theme == "dark" ? "Light Mode" : "Dark Mode"}</div>
+                    <div className='bg-white w-full px-2'>{theme == "dark" ? "Dark Mode" : "Light Mode"}</div>
                 </div>
             }
         </div>
