@@ -3,23 +3,24 @@ import Link from 'next/link';
 
 export type NavItemProps = {
     url: string,
-    name: string,  
-    icon: { 
-        src: string,  
-        alt: string, 
-        width: number, 
-        height: number 
+    name: string,
+    icon: {
+        src: string,
+        alt: string
     }
 }
 
 export const NavItem = (props: NavItemProps) => {
     return (
-        <Link href={props.url}>
-            <div className='bg-[#E1E2E9] hover:bg-w95-grey flex gap-4 p-2 font-ps2p text-xs items-center w-48 h-16 drop-shadow-md'>
-                    <Image 
+        <Link href={props.url} className="font-ps2p text-xs">
+            <div className='bg-[#E1E2E9] dark:bg-[#32333E] hover:bg-w95-grey dark:hover:bg-[#32333E80] p-2 gap-4 flex flex-col items-center'>
+                <div className="relative h-8 w-8">
+                    <Image
+                        fill
                         {...props.icon}
                     />
-                    {props.name}
+                </div>
+                <p>{props.name}</p>
             </div>
         </Link>
     )

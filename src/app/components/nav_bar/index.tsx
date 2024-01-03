@@ -8,9 +8,7 @@ export const NavBar = () => {
             name: "Home",
             icon: {
                 src: "/images/home_icon.png",
-                alt: "Home Icon",
-                width: 24,
-                height: 24
+                alt: "Home Icon"
             }
         },
         {
@@ -18,9 +16,7 @@ export const NavBar = () => {
             name: "Notícias",
             icon: {
                 src: "/images/news_icon.png",
-                alt: "News Icon",
-                width: 24,
-                height: 24
+                alt: "News Icon"
             }
         },
         {
@@ -28,9 +24,7 @@ export const NavBar = () => {
             name: "Projetos",
             icon: {
                 src: "/images/projects_icon.png",
-                alt: "Projects Icon",
-                width: 24,
-                height: 24
+                alt: "Projects Icon"
             }
         },
         {
@@ -38,9 +32,7 @@ export const NavBar = () => {
             name: "Membros",
             icon: {
                 src: "/images/members_icon.png",
-                alt: "Members Icon",
-                width: 24,
-                height: 24
+                alt: "Members Icon"
             }
         },
         {
@@ -48,9 +40,7 @@ export const NavBar = () => {
             name: "História",
             icon: {
                 src: "/images/history_icon.png",
-                alt: "History Icon",
-                width: 24,
-                height: 24
+                alt: "History Icon"
             }
         },
         {
@@ -58,9 +48,7 @@ export const NavBar = () => {
             name: "Sobre",
             icon: {
                 src: "/images/about_icon.png",
-                alt: "About Icon",
-                width: 24,
-                height: 24
+                alt: "About Icon"
             }
         },
         {
@@ -68,17 +56,15 @@ export const NavBar = () => {
             name: "Contato",
             icon: {
                 src: "/images/contact_icon.png",
-                alt: "Contact Icon",
-                width: 24,
-                height: 24
+                alt: "Contact Icon"
             }
         }
     ]
     
     return (
-        <div className="h-full sticky top-4 z-10">
+        <div className="sticky lg:top-4 z-10 h-fit flex justify-center p-2">
             <Window>
-                <nav className='p-2 flex flex-col gap-2 justify-between'>
+                <nav className='flex lg:flex-col gap-2 p-2'>
                     {NavItems.map((element : NavItemProps) => { return <NavItem key={element.url} {...element} />})}
                 </nav>
             </Window>
