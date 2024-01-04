@@ -46,26 +46,23 @@ const History = () => {
 
           <div className='z-10 flex justify-center'>
             <Window>
-              <div className='flex flex-col p-2 pt-6 gap-8 justify-center'>
-                <div className="px-32">
+              <div className='py-8 px-20'>
+                <div className="relative aspect-video">
                   <Image
                     src={"/images/pet_background.png"}
                     alt="PET-SIMC's Article Photo"
-                    width={600}
-                    height={200}
-                    className='aspect-video max-w-full'
-                    style={{ height: "auto", width: "auto" }}
+                    fill
                   />
                 </div>
-              </div>
 
-              <div className={'flex flex-col items-center gap-2 p-8'}>
-                <div className='flex flex-col gap-8 order-1 transition-all items-center'>
-                  <div className="font-ps2p flex-col flex gap-2">
-                    <h1 className='text-2xl max-w-full text-center'>História do PET-SIMC</h1>
-                    <h2 className='text-xs max-w-full text-center text-black/50 dark:text-white/50'>PET de Sistemas de Informação de Monte Carmelo</h2>
+                <div className={'flex flex-col items-center gap-2 p-8'}>
+                  <div className='flex flex-col gap-8 order-1 transition-all items-center'>
+                    <div className="font-ps2p flex-col flex gap-2">
+                      <h1 className='text-2xl max-w-full text-center'>História do PET-SIMC</h1>
+                      <h2 className='text-xs max-w-full text-center text-black/50 dark:text-white/50'>PET de Sistemas de Informação de Monte Carmelo</h2>
+                    </div>
+                    <p className='max-w-2xl whitespace-pre-line'>{historyContent}</p>
                   </div>
-                  <p className='max-w-2xl whitespace-pre-line'>{historyContent}</p>
                 </div>
               </div>
             </Window>
