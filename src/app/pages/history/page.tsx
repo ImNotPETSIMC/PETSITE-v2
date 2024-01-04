@@ -8,9 +8,25 @@ import { NavBar } from "@/app/components/nav_bar";
 import { Window } from "@/app/components/window";
 import { Header } from '@/app/components/header';
 import { BreakWindow } from '@/app/components/break_window';
-import { historyText } from '@/app/assets/texts';
+import { historyContent, historyText } from '@/app/assets/texts';
 import { Aside } from '@/app/components/aside';
+import { InfoContainer } from '@/app/components/info_container';
+import { FolderButtonProps } from '@/app/components/folder_button';
 
+const folderButtons: FolderButtonProps[] = [
+  {
+    name: "info-text",
+    title: "História do PET-SIMC",
+    id: "history",
+    text: historyText,
+    icon: {
+      src: "/images/folder_black_file.png",
+      alt: "History Icon",
+      width: 75,
+      height: 75
+    },
+  }
+];
 
 const History = () => {
   return (
@@ -19,6 +35,14 @@ const History = () => {
         <NavBar />
         <div className='flex flex-wrap flex-col gap-4 justify-center'>
           <Header />
+
+          <div className='z-10 flex justify-center'>
+            <Window>
+              <InfoContainer content={folderButtons} custom='w-1/2 p-2' />
+            </Window>
+          </div>
+
+          <BreakWindow end />
 
           <div className='z-10 flex justify-center'>
             <Window>
@@ -41,7 +65,7 @@ const History = () => {
                     <h1 className='text-2xl max-w-full text-center'>História do PET-SIMC</h1>
                     <h2 className='text-xs max-w-full text-center text-black/50 dark:text-white/50'>PET de Sistemas de Informação de Monte Carmelo</h2>
                   </div>
-                  <p className='max-w-2xl whitespace-pre-line'>{historyText}</p>
+                  <p className='max-w-2xl whitespace-pre-line'>{historyContent}</p>
                 </div>
               </div>
             </Window>
