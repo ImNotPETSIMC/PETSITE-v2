@@ -12,11 +12,11 @@ export type LastNewsContainerProps = {
 export const LastNewsContainer = (props: LastNewsContainerProps) => {
   if (!props.news.length) props.news.push(NotFoundArticle);
 
-  const [ current, setCurrent ] = useState<number>(0);  
-  const [ currentNews, setCurrentNews ] = useState<Article>(props.news[current]);
-  
+  const [current, setCurrent] = useState<number>(0);
+  const [currentNews, setCurrentNews] = useState<Article>(props.news[current]);
+
   useEffect(() => setCurrentNews(props.news[current]));
-  
+
   return (
     <>
       <div className='flex'>
@@ -28,43 +28,44 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
           <p className='max-w-md'>
             <span className="whitespace-pre-line">{cropText(currentNews.body, 400)} </span>
             <Link href={'/pages/news#' + currentNews.id} className="text-black/50 dark:text-white/50">Leia mais</Link>
-        </p>
+          </p>
         </div>
-        
+
         <div className='flex flex-col p-8 gap-8 justify-center'>
-          <Image 
+          <Image
             {...currentNews.icon}
             width={400}
             height={200}
             className='aspect-video max-w-xl'
-            style={{height: "auto", width: "auto"}}
+            style={{ height: "auto", width: "auto" }}
           />
-
           <div className="flex items-center justify-between px-2">
-            <div className="flex justify-center items-center p-1 bg-w95-grey">
-              <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey hover:bg-w95-light-grey/60' onClick={() => setCurrent( (props.news.length + current - 1) % props.news.length )}>
-                <Image 
-                  src="/images/left_arrow.svg" 
+            <div className="flex justify-center items-center p-1 border-4 border-w95-grey bg-w95-light-grey hover:bg-w95-light-grey/60 dark:bg-white/20 hover:dark:bg-white/40">
+              <button className='w-20 h-7 flex justify-center items-center' onClick={() => setCurrent((props.news.length + current - 1) % props.news.length)}>
+                <Image
+                  src="/images/left_arrow.svg"
                   alt="Previous News Icon"
                   width={12}
                   height={12}
-                  style={{height: "auto", width: "auto"}}
+                  className="dark:invert"
+                  style={{ height: "auto", width: "auto" }}
                 />
               </button>
             </div>
 
             <div className='flex gap-8'>
-              { props.news.map((element, index) => <CarouselRadioButton key={element.id + "_news"} id={element.id + "_news"} name="recent_news" selected={index == current} onclick={() => setCurrent((index))}/>) }
+              {props.news.map((element, index) => <CarouselRadioButton key={element.id + "_news"} id={element.id + "_news"} name="recent_news" selected={index == current} onclick={() => setCurrent((index))} />)}
             </div>
 
-            <div className="flex justify-center items-center p-1 bg-w95-grey">
-              <button className='w-20 h-7 flex justify-center items-center bg-w95-light-grey hover:bg-w95-light-grey/60' onClick={() => setCurrent((current + 1) % props.news.length)}>
-                <Image 
-                  src="/images/right_arrow.svg" 
+            <div className="flex justify-center items-center p-1 border-4 border-w95-grey bg-w95-light-grey hover:bg-w95-light-grey/60 dark:bg-white/20 hover:dark:bg-white/40">
+              <button className='w-20 h-7 flex justify-center items-center' onClick={() => setCurrent((current + 1) % props.news.length)}>
+                <Image
+                  src="/images/right_arrow.svg"
                   alt="Next News Icon"
                   width={12}
                   height={12}
-                  style={{height: "auto", width: "auto"}}
+                  className="dark:invert"
+                  style={{ height: "auto", width: "auto" }}
                 />
               </button>
             </div>

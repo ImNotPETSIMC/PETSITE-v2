@@ -77,14 +77,14 @@ const Contact = () => {
                   <div className="flex gap-8">
                     <label className="flex flex-col gap-2 w-1/3">Nome:
                       <input
-                        className="bg-w95-light-grey p-1 border-4 border-w95-grey"
+                        className="bg-w95-light-grey p-1 border-4 border-w95-grey dark:bg-stone-950/10 dark:text-white/70 dark:backdrop-blur-lg"
                         {...register("name")}
                       />
                       {errors.name && <p className="text-xs text-red-900">{`${errors.name.message}`}</p>}
                     </label>
                     <label className="flex flex-col gap-2 grow">Email:
                       <input
-                        className="bg-w95-light-grey p-1 border-4 border-w95-grey"
+                        className="bg-w95-light-grey p-1 border-4 border-w95-grey dark:bg-stone-950/10 dark:text-white/70 dark:backdrop-blur-lg"
                         {...register("email")}
                       />
                       {errors.email && <p className="text-xs text-red-900">{`${errors.email.message}`}</p>}
@@ -92,7 +92,7 @@ const Contact = () => {
                   </div>
                   <label className="flex flex-col gap-2">Mensagem:
                     <textarea
-                      className="resize-none h-80 bg-w95-light-grey border-4 border-w95-grey"
+                      className="resize-none h-80 bg-w95-light-grey border-4 border-w95-grey dark:bg-stone-950/10 dark:text-white/70 dark:backdrop-blur-lg"
                       {...register("content")}
                       />
                       {(mutation.isError && (mutation.error instanceof AxiosError)) && <p className="text-xs text-red-900">Erro: {mutation.error.message}</p>}
@@ -100,13 +100,14 @@ const Contact = () => {
                     {errors.content && <p className="text-xs text-red-900">{`${errors.content.message}`}</p>}
                   </label>
                   <div className="flex gap-2 items-center w-full justify-center">
-                    <input type="submit" disabled={isSubmitting} className="bg-w95-light-grey border-4 border-w95-grey text-black text-lg hover:cursor-pointer p-4 px-20 disabled:opacity-20" />
-                    <button className="bg-w95-light-grey text-black flex items-center p-3 border-4 border-w95-grey shadow" onClick={() => reset()}>
+                    <input type="submit" disabled={isSubmitting} className="dark:bg-stone-950/10 dark:text-white dark:backdrop-blur-lg bg-w95-light-grey border-4 border-w95-grey text-black text-lg hover:cursor-pointer p-4 px-20 disabled:opacity-20" />
+                    <button className="bg-w95-light-grey text-black flex items-center p-3 border-4 border-w95-grey shadow dark:bg-stone-950/10 dark:backdrop-blur-lg" onClick={() => reset()}>
                       <div className="p-2 hover:cursor-pointer relative">
                         <Image
                           src="/images/trash_can.svg"
                           alt="Trash can Icon"
                           fill
+                          className="dark:invert"
                         />
                       </div>
                     </button>
