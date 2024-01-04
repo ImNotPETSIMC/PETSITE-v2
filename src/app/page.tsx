@@ -54,19 +54,7 @@ const folderButtons: FolderButtonProps[] = [
   },
   {
     name: "info-text",
-    title: "Pilares",
-    id: "pillars",
-    text: pillarsPetsimc,
-    icon: {
-      src: "/images/folder_yellow_file.png",
-      alt: "Pillars Icon",
-      width: 75,
-      height: 75
-    }
-  },
-  {
-    name: "info-text",
-    title: "Edital",
+    title: "Edital PET",
     id: "edict",
     text: "Em Construção",
     icon: {
@@ -102,7 +90,7 @@ const Home = () => {
 
           <div className='z-10 flex justify-center'>
             <Window>
-              <InfoContainer content={folderButtons} />
+              <InfoContainer content={folderButtons} custom='w-[30%] p-2'/>
             </Window>
           </div>
 
