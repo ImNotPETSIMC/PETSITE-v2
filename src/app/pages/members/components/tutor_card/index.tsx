@@ -27,12 +27,12 @@ export const TutorCard = (props: TutorCardProps) => {
     return (
         <div className='flex justify-between font-ps2p p-2 dark:bg-stone-950/80 dark:backdrop-blur-xl'>
             <div className="flex justify-center items-center">
-                <button onClick={props.onClickLeft} className='relative h-1/3 w-12 bg-w95-light-grey hover:bg-w95-light-grey/60 border-8 border-w95-grey'>
+                <button onClick={props.onClickLeft} className='relative h-1/3 w-12 bg-w95-light-grey hover:bg-w95-light-grey/60 border-4 border-w95-grey dark:bg-white/20 hover:dark:bg-white/40'>
                     <Image
                         src="/images/left_arrow.svg"
                         alt="Previous Member Icon"
                         fill
-                        className="p-2"
+                        className="p-3 dark:invert"
                     />
                 </button>
             </div>
@@ -109,12 +109,12 @@ export const TutorCard = (props: TutorCardProps) => {
                 </div>
             </div>
             <div className="flex justify-center items-center">
-                <button onClick={props.onClickRight} className='relative h-1/3 w-12 bg-w95-light-grey hover:bg-w95-light-grey/60 border-8 border-w95-grey'>
+                <button onClick={props.onClickRight} className='relative h-1/3 w-12 bg-w95-light-grey hover:bg-w95-light-grey/60 border-4 border-w95-grey dark:bg-white/20 hover:dark:bg-white/40'>
                     <Image
                         src="/images/right_arrow.svg"
                         alt="Next Member Icon"
                         fill
-                        className="p-2"
+                        className="p-3 dark:invert"
                     />
                 </button>
             </div>

@@ -1,6 +1,6 @@
+import './globals.css'
 import type { Metadata, Viewport } from 'next'
 import { monda, monoton, ps2p } from './fonts'
-import './globals.css'
 import { QueryProvider, ThemesProvider } from './provider'
 
 

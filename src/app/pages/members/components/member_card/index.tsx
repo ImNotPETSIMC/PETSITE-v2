@@ -28,14 +28,14 @@ export type MemberCardProps = {
 
 export const MemberCard = (props: MemberCardProps) => {
     return (
-        <div className='flex justify-between font-ps2p p-2 dark:bg-stone-950/70 dark:backdrop-blur-xl'>
+        <div className='flex justify-between font-ps2p p-4 dark:bg-stone-950/70 dark:backdrop-blur-xl'>
             <div className="flex justify-center items-center">
-                <button onClick={props.onClickLeft} className='relative h-1/3 w-12 bg-w95-light-grey hover:bg-w95-light-grey/60 border-8 border-w95-grey'>
+                <button onClick={props.onClickLeft} className='relative h-1/3 w-12 bg-w95-light-grey hover:bg-w95-light-grey/60 border-4 border-w95-grey dark:bg-white/20 hover:dark:bg-white/40'>
                     <Image
                         src="/images/left_arrow.svg"
                         alt="Previous Member Icon"
                         fill
-                        className="p-2"
+                        className="p-3 dark:invert"
                     />
                 </button>
             </div>
@@ -53,7 +53,7 @@ export const MemberCard = (props: MemberCardProps) => {
                         <p className='dark:text-white/60'>🎈 - Hobby:              <span className={'text-black/50 dark:text-white ' + (props.member.hobby ? "" : "glitch")}>{props.member.hobby ? props.member.hobby : "undefined"}</span></p>
                         <p className='dark:text-white/60'>🛠️ - Projetos:           <span className={'text-black/50 dark:text-white ' + (props.member.projects && props.member.projects.length ? "" : "glitch")}>{props.member.projects && props.member.projects.length ? props.member.projects.join(", ") : "undefined"}</span></p>
                     </div>
-                    <iframe style={{ borderRadius: "12px" }} src={"https://open.spotify.com/embed/track/" + props.member.spotify_track_url + "?utm_source=generator"} width="100%" height="152" allow="autoplay;" loading="lazy"></iframe>
+                    <iframe style={{ borderRadius: "16px" }} src={"https://open.spotify.com/embed/track/" + props.member.spotify_track_url + "?utm_source=generator"} width="100%" height="152" allow="autoplay;" loading="lazy"></iframe>
                 </div>
                  <div className="flex flex-col p-4 gap-4 items-center justify-center">
                     <div className="h-60 w-60 relative">
@@ -105,12 +105,12 @@ export const MemberCard = (props: MemberCardProps) => {
                 </div>
             </div>
             <div className="flex justify-center items-center">
-                <button onClick={props.onClickRight} className='relative h-1/3 w-12 bg-w95-light-grey hover:bg-w95-light-grey/60 border-8 border-w95-grey'>
+                <button onClick={props.onClickRight} className='relative h-1/3 w-12 bg-w95-light-grey hover:bg-w95-light-grey/60 border-4 border-w95-grey dark:bg-white/20 hover:dark:bg-white/40'>
                     <Image
                         src="/images/right_arrow.svg"
                         alt="Next Member Icon"
                         fill
-                        className="p-2"
+                        className="p-3 dark:invert"
                     />
                 </button>
             </div>

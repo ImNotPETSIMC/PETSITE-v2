@@ -16,7 +16,7 @@ import { FolderButtonProps } from '@/app/components/folder_button';
 const folderButtons: FolderButtonProps[] = [
   {
     name: "info-text",
-    title: "História do PET-SIMC",
+    title: "História",
     id: "history",
     text: historyText,
     icon: {
