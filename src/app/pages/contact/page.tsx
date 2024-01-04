@@ -11,7 +11,7 @@ import { NavBar } from "@/app/components/nav_bar";
 import { Window } from "@/app/components/window";
 import { postData } from "@/app/helpers/postData";
 import { zodResolver } from "@hookform/resolvers/zod";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import Image from "next/image";
 import { FieldValues, useForm } from "react-hook-form";
 import { useMutation } from "react-query";
@@ -42,18 +42,16 @@ const Contact = () => {
   const mutation = useMutation({
     mutationFn: (data : FieldValues) => postData("/message", data)
   })
-
   
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-    reset,
-    getValues
+    reset
   } = useForm({ resolver: zodResolver(messageSchema) });
 
   const onSubmit = async (data: FieldValues) => {
-    mutation.mutate(data);
+    await mutation.mutateAsync(data);
   }
 
   return (
@@ -96,11 +94,13 @@ const Contact = () => {
                     <textarea
                       className="resize-none h-80 bg-w95-light-grey border-4 border-w95-grey"
                       {...register("content")}
-                    />
+                      />
+                      {(mutation.isError && (mutation.error instanceof AxiosError)) && <p className="text-xs text-red-900">Erro: {mutation.error.message}</p>}
+                      {(mutation.isSuccess) && <p className="text-xs text-green-900">Sucesso - Mensagem Enviada!</p>}
                     {errors.content && <p className="text-xs text-red-900">{`${errors.content.message}`}</p>}
                   </label>
                   <div className="flex gap-2 items-center w-full justify-center">
-                    <input type="submit" className="bg-w95-light-grey border-4 border-w95-grey text-black text-lg hover:cursor-pointer p-4 px-20" />
+                    <input type="submit" disabled={isSubmitting} className="bg-w95-light-grey border-4 border-w95-grey text-black text-lg hover:cursor-pointer p-4 px-20 disabled:opacity-20" />
                     <button className="bg-w95-light-grey text-black flex items-center p-3 border-4 border-w95-grey shadow" onClick={() => reset()}>
                       <div className="p-2 hover:cursor-pointer relative">
                         <Image
