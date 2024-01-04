@@ -7,7 +7,7 @@ import { Footer } from "@/app/components/footer";
 import { NavBar } from "@/app/components/nav_bar";
 import { Header } from '@/app/components/header';
 import { BreakWindow } from '@/app/components/break_window';
-import { Article, ContentContainer } from '@/app/components/content_container';
+import { ContentContainer } from '@/app/components/content_container';
 import { useQuery } from 'react-query';
 import { fetchData } from '@/app/helpers/fetchData';
 import { Aside } from '@/app/components/aside';
@@ -15,7 +15,7 @@ import { InfoContainer } from '@/app/components/info_container';
 import { FolderButtonProps } from '@/app/components/folder_button';
 import { Window } from '@/app/components/window';
 import { newsText } from '@/app/assets/texts';
-import { NotFoundArticle } from '@/app/assets/missing_article';
+import { convertDate } from '@/app/helpers/convertDate';
 
 const folderButtons: FolderButtonProps[] = [
   {
@@ -25,12 +25,21 @@ const folderButtons: FolderButtonProps[] = [
     text: newsText,
     icon: {
       src: "/images/folder_blue_file.png",
-      alt: "About Icon",
+      alt: "News Icon",
       width: 75,
       height: 75
     },
   }
 ];
+
+export type NewsArticle = {
+  id: string
+  name: string
+  date: Date
+  content: string
+  photo: string
+
+}
 
 const News = () => {
   const news = useQuery({ queryKey: ['news'], queryFn: () => fetchData('/news'), initialData: { news: [] }},);
@@ -51,12 +60,12 @@ const News = () => {
           <BreakWindow end/>
 
           {
-            news.isSuccess &&
-            ((news.data.news).length ? (news.data.news as Article[]) : [NotFoundArticle]).map((element, index) => {
+            (news.isSuccess && news.data.news.length) &&
+            (news.data.news as NewsArticle[]).map((element, index) => {
               return (
                 <div key={element.id} className='flex flex-col w-full gap-4'>
                   <div className='z-10 translate-x-2 2xl:translate-x-20 flex w-full'>
-                    <ContentContainer content={element} />
+                    <ContentContainer content={{ title: element.name, date: convertDate(element.date), body: element.content, id: element.id, icon: { src: "data:image/jpeg;base64," + element.photo, alt: (element.name + " Article Photo") }}} />
                   </div>
                   <BreakWindow end={index % 2 ? true : false} />
                 </div>
