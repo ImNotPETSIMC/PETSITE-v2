@@ -11,7 +11,7 @@ import { NavBar } from "@/app/components/nav_bar";
 import { Window } from "@/app/components/window";
 import { postData } from "@/app/helpers/postData";
 import { zodResolver } from "@hookform/resolvers/zod";
-import axios, { AxiosError } from "axios";
+import { AxiosError } from "axios";
 import Image from "next/image";
 import { FieldValues, useForm } from "react-hook-form";
 import { useMutation } from "react-query";

@@ -1,4 +1,3 @@
-import { Radio } from "@material-tailwind/react"
 import { MouseEventHandler } from "react"
 
 export type CarouselRadioButtonProps = {

@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { MouseEventHandler, useEffect, useState } from "react"
+import { MouseEventHandler, useState } from "react"
 
 type WindowProps = {
     children: React.ReactNode
