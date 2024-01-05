@@ -16,6 +16,7 @@ import { FolderButtonProps } from '@/app/components/folder_button';
 import { Window } from '@/app/components/window';
 import { newsText } from '@/app/assets/texts';
 import { convertDate } from '@/app/helpers/convertDate';
+import { NotFoundArticle } from '@/app/assets/missing_article';
 
 const folderButtons: FolderButtonProps[] = [
   {
@@ -60,12 +61,11 @@ const News = () => {
           <BreakWindow end/>
 
           {
-            (news.isSuccess && news.data.news.length) &&
-            (news.data.news as NewsArticle[]).map((element, index) => {
+            ((news.isSuccess && news.data.news.length) ? (news.data.news as NewsArticle[]) : [{ id: NotFoundArticle.id, name: NotFoundArticle.title, date: NotFoundArticle.date, content: NotFoundArticle.body, photo: NotFoundArticle.icon.src }]).map((element, index) => {
               return (
                 <div key={element.id} className='flex flex-col w-full gap-4'>
-                  <div className='z-10 translate-x-2 2xl:translate-x-20 flex w-full'>
-                    <ContentContainer content={{ title: element.name, date: convertDate(element.date), body: element.content, id: element.id, icon: { src: "data:image/jpeg;base64," + element.photo, alt: (element.name + " Article Photo") }}} />
+                  <div className='z-10 justify-center flex w-full'>
+                    <ContentContainer content={{ title: element.name, date: convertDate(element.date), body: element.content, id: element.id, icon: { src: "data:image/jpeg;base64," + element.photo, alt: (element.name + " Article Photo") }, loading: news.isFetching }} />
                   </div>
                   <BreakWindow end={index % 2 ? true : false} />
                 </div>

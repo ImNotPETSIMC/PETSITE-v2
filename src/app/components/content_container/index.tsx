@@ -12,7 +12,7 @@ export type Article = {
     src: string,
     alt: string
   }
-  loading?: true
+  loading?: boolean
 }
 
 export type ContentContainerProps = {

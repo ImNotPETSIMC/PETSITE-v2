@@ -31,7 +31,7 @@ export const MemberSection = ({ members, tutors, loading }: MembersSectionProps)
 
     return (
         <>
-            <div className={"gap-10 flex flex-col items-center" + (loading && "blur")} >
+            <div className={"gap-10 flex flex-col items-center " + (loading && "blur")} >
                 <div className="flex flex-col items-center relative">
                     <Window>
                         <MembersContainer

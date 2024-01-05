@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { useEffect, useState } from "react";
 import { CarouselRadioButton } from "./CarouselRadioButton";
 import { cropText } from "@/app/helpers/cropText";
-import { Article } from "../content_container";
 import { NewsArticle } from "@/app/pages/news/page";
 import { convertDate } from "@/app/helpers/convertDate";
 
 export type LastNewsContainerProps = {
   news: NewsArticle[]
+  loading?: boolean
 }
 export const LastNewsContainer = (props: LastNewsContainerProps) => {
   const [current, setCurrent] = useState<number>(0);
@@ -18,7 +18,7 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
 
   return (
     <>
-      <div className='flex'>
+      <div className={'flex ' + (props.loading ? "blur" : "")}>
         <div className='flex flex-col max-w-xl p-12 gap-8'>
           <div>
             <h1 className='font-ps2p text-2xl max-w-md'>{currentNews.name}</h1>

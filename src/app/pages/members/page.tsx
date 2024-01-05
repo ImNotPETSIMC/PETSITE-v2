@@ -87,7 +87,7 @@ const Members = () => {
 
           <BreakWindow end />
 
-          <MemberSection members={{ title: 'Membros', subtitle: 'Membros atuais do PET-SIMC', minQuantity: 12, content: (member.isSuccess ? member.data.members : []) }} loading={member.isLoading || tutor.isLoading} tutors={{ title: 'Tutor', subtitle: 'Tutor atual do PET-SIMC', content: (tutor.isSuccess ? tutor.data.members : []) }} />
+          <MemberSection members={{ title: 'Membros', subtitle: 'Membros atuais do PET-SIMC', minQuantity: 12, content: (member.isSuccess ? member.data.members : []) }} loading={member.isFetching || tutor.isFetching} tutors={{ title: 'Tutor', subtitle: 'Tutor atual do PET-SIMC', content: (tutor.isSuccess ? tutor.data.members : []) }} />
 
           <BreakWindow />
 
@@ -97,7 +97,7 @@ const Members = () => {
             </Window>
           </div>
 
-          <MemberSection members={{ title: 'Ex-Membros', subtitle: 'Ex-Membros do PET-SIMC', minQuantity: 1, content: (exMembers.isSuccess ? exMembers.data.members : []) }} loading={exMembers.isLoading || exTutors.isLoading} tutors={{ title: 'Ex-Tutores', subtitle: 'Ex-Tutores do PET-SIMC', content: (exTutors.isSuccess ? exTutors.data.members : []) }} />
+          <MemberSection members={{ title: 'Ex-Membros', subtitle: 'Ex-Membros do PET-SIMC', minQuantity: 1, content: (exMembers.isSuccess ? exMembers.data.members : []) }} loading={exMembers.isFetching || exTutors.isFetching} tutors={{ title: 'Ex-Tutores', subtitle: 'Ex-Tutores do PET-SIMC', content: (exTutors.isSuccess ? exTutors.data.members : []) }} />
 
           <BreakWindow end />
         </div>

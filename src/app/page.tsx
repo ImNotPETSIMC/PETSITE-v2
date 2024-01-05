@@ -14,6 +14,7 @@ import { Header } from './components/header';
 import { fetchData } from './helpers/fetchData';
 import { useQuery } from 'react-query';
 import { Aside } from './components/aside';
+import { NotFoundArticle } from './assets/missing_article';
 
 const folderButtons: FolderButtonProps[] = [
   {
@@ -96,13 +97,12 @@ const Home = () => {
 
           <BreakWindow />
 
-          {(news.isSuccess && news.data.news.length) &&
-            <div className='z-10 flex justify-center lg:translate-x-20'>
-              <Window>
-                <LastNewsContainer news={news.data.news} />
-              </Window>
-            </div>
-          }
+          <div className='z-10 flex justify-center lg:translate-x-20'>
+            <Window>
+              <LastNewsContainer loading={news.isFetching} news={(news.isSuccess && news.data.news.length) ? news.data.news : [{ id: NotFoundArticle.id, name: NotFoundArticle.title, date: NotFoundArticle.date, content: NotFoundArticle.body, photo: NotFoundArticle.icon.src }]}  />
+            </Window>
+          </div>
+          
 
           <BreakWindow end />
         </div>

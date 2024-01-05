@@ -14,6 +14,7 @@ import { FolderButtonProps } from '@/app/components/folder_button';
 import { projectsText } from '@/app/assets/texts';
 import { Window } from '@/app/components/window';
 import { InfoContainer } from '@/app/components/info_container';
+import { NotFoundArticle } from '@/app/assets/missing_article';
 
 const folderButtons: FolderButtonProps[] = [
   {
@@ -59,12 +60,11 @@ const Projects = () => {
           <BreakWindow end />
 
           {
-            (project.isSuccess && project.data.projects.length) &&
-            (project.data.projects as Project[]).map((element, index) => {
+            ((project.isSuccess && project.data.projects.length) ? ( project.data.projects as Project[]) : [{ id: NotFoundArticle.id, name: NotFoundArticle.title, subtitle: NotFoundArticle.date, description: NotFoundArticle.body, photo: NotFoundArticle.icon.src }]).map((element, index) => {
               return (
                 <div key={element.id} className='flex flex-col w-full gap-4'>
                   <div className='z-10 justify-center flex w-full'>
-                    <ContentContainer content={{title: element.name, date: element.subtitle, body: element.description, id: element.id, icon: { src: "data:image/jpeg;base64," + element.photo, alt: (element.name + " Article Photo") }}} />
+                    <ContentContainer content={{title: element.name, date: element.subtitle, body: element.description, id: element.id, icon: { src: "data:image/jpeg;base64," + element.photo, alt: (element.name + " Article Photo")}, loading: project.isFetching}} />
                   </div>
                   <BreakWindow end={index % 2 ? true : false} />
                 </div>
