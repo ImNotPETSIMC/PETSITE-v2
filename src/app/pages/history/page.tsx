@@ -31,7 +31,7 @@ const folderButtons: FolderButtonProps[] = [
 const History = () => {
   return (
     <>
-      <main className="font-monda pb-10 gap-4 flex flex-col lg:flex-row px-2 items-center lg:items-start justify-between grow">
+      <main className="font-monda pb-10 gap-4 flex flex-col lg:flex-row px-10 lg:px-2 items-center lg:items-start justify-between grow">
         <NavBar />
         <div className='flex flex-wrap flex-col gap-4 justify-center'>
           <Header />
