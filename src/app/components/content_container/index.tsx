@@ -26,9 +26,9 @@ export const ContentContainer = (props: ContentContainerProps) => {
     <Window>
       <div className={'flex has-[:checked]:flex-col has-[:checked]:items-center has-[:checked]:px-20 gap-2 p-8 group ' + (props.content.loading ? "blur" : "")}>
         <div className='flex flex-col gap-8 p-4 transition-all has-[:checked]:items-center'>
-          <div className="font-ps2p flex-col flex gap-2">
+          <div className="font-ps2p flex-col flex gap-2 group-has-[:checked]:items-center">
             <h1 className='text-2xl max-w-md group-has-[:checked]:max-w-full group-has-[:checked]:text-center'>{props.content.title}</h1>
-            <h2 className='text-xs  max-w-md group-has-[:checked]:max-w-full group-has-[:checked]:text-center text-black/50 dark:text-white/50'>{props.content.date}</h2>
+            <h2 className='text-xs  max-w-md group-has-[:checked]:text-center text-black/50 dark:text-white/50'>{props.content.date}</h2>
           </div>
           <p className='max-w-md  whitespace-pre-line group-has-[:checked]:hidden'>{cropText(props.content.body, 400)}</p>
           <p className='max-w-2xl whitespace-pre-line hidden group-has-[:checked]:block'>{props.content.body}</p>
