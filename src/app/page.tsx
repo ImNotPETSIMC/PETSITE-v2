@@ -90,19 +90,21 @@ const Home = () => {
 
           <div className='z-10 flex justify-center'>
             <Window>
-              <InfoContainer content={folderButtons} custom='w-[30%] p-2'/>
+              <InfoContainer content={folderButtons} custom='w-[30%] p-2' />
             </Window>
           </div>
 
-          <BreakWindow/>
+          <BreakWindow />
 
-          <div className='z-10 flex justify-center lg:translate-x-20'>
-            <Window>
-              <LastNewsContainer news={(news.isSuccess ? news.data.news : [])} />
-            </Window>
-          </div>
+          {(news.isSuccess && news.data.news.length) &&
+            <div className='z-10 flex justify-center lg:translate-x-20'>
+              <Window>
+                <LastNewsContainer news={news.data.news} />
+              </Window>
+            </div>
+          }
 
-          <BreakWindow end/>
+          <BreakWindow end />
         </div>
         <Aside />
       </main>

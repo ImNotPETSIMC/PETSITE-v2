@@ -35,7 +35,7 @@ const folderButtons: FolderButtonProps[] = [
 export type NewsArticle = {
   id: string
   name: string
-  date: Date
+  date: string
   content: string
   photo: string
 

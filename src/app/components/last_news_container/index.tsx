@@ -4,16 +4,15 @@ import { useEffect, useState } from "react";
 import { CarouselRadioButton } from "./CarouselRadioButton";
 import { cropText } from "@/app/helpers/cropText";
 import { Article } from "../content_container";
-import { NotFoundArticle } from "@/app/assets/missing_article";
+import { NewsArticle } from "@/app/pages/news/page";
+import { convertDate } from "@/app/helpers/convertDate";
 
 export type LastNewsContainerProps = {
-  news: Article[]
+  news: NewsArticle[]
 }
 export const LastNewsContainer = (props: LastNewsContainerProps) => {
-  if (!props.news.length) props.news.push(NotFoundArticle);
-
   const [current, setCurrent] = useState<number>(0);
-  const [currentNews, setCurrentNews] = useState<Article>(props.news[current]);
+  const [currentNews, setCurrentNews] = useState<NewsArticle>(props.news[current]);
 
   useEffect(() => setCurrentNews(props.news[current]));
 
@@ -22,18 +21,19 @@ export const LastNewsContainer = (props: LastNewsContainerProps) => {
       <div className='flex'>
         <div className='flex flex-col max-w-xl p-12 gap-8'>
           <div>
-            <h1 className='font-ps2p text-2xl max-w-md'>{currentNews.title}</h1>
-            <h2 className='font-ps2p text-xs max-w-md text-black/50 dark:text-white/50'>{currentNews.date}</h2>
+            <h1 className='font-ps2p text-2xl max-w-md'>{currentNews.name}</h1>
+            <h2 className='font-ps2p text-xs max-w-md text-black/50 dark:text-white/50'>{convertDate(currentNews.date)}</h2>
           </div>
           <p className='max-w-md'>
-            <span className="whitespace-pre-line">{cropText(currentNews.body, 400)} </span>
+            <span className="whitespace-pre-line">{cropText(currentNews.content, 400)} </span>
             <Link href={'/pages/news#' + currentNews.id} className="text-black/50 dark:text-white/50">Leia mais</Link>
           </p>
         </div>
 
         <div className='flex flex-col p-8 gap-8 justify-center'>
           <Image
-            {...currentNews.icon}
+            src= {"data:image/jpeg;base64," + currentNews.photo} 
+            alt= {(currentNews.name + " Article Photo")}
             width={400}
             height={200}
             className='aspect-video max-w-xl'
