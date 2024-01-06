@@ -39,36 +39,36 @@ Displays introduction information about PET-SIMC and latest news.
 -----
 
 <h3>News Page</h3>
-<img src="src/assets/news_page.png" title="News Page" width=50% height=50%>></img>
+<img src="public/images/news_page.png" title="News Page" width=50% height=50%>></img>
 Displays all PET-SIMC's registered members and ex-members.
 
 -----
 
 <h3>Projects Page</h3>
-<img src="src/assets/member_page.png" title="Projects Page" width=50% height=50%>></img>
+<img src="public/images/member_page.png" title="Projects Page" width=50% height=50%>></img>
 Displays all PET-SIMC's registered members and ex-members.
 
 -----
 
 <h3>Members Page</h3>
-<img src="src/assets/member_page.png" title="Members Page" width=50% height=50%>></img>
+<img src="public/images/member_page.png" title="Members Page" width=50% height=50%>></img>
 Displays all PET-SIMC's registered members and ex-members.
 
 -----
 
 <h3>History Page</h3>
-<img src="src/assets/history_page.png" title="History Page" width=50% height=50%>></img>
+<img src="public/images/history_page.png" title="History Page" width=50% height=50%>></img>
 Displays a short summary about PET-SIMC's history.
 
 -----
 
 <h3>About Page</h3>
-<img src="src/assets/about_page.png" title="About Page" width=50% height=50%>></img>
+<img src="public/images/about_page.png" title="About Page" width=50% height=50%>></img>
 Displays a short summary about PET-SIMC.
 
 -----
 
 <h3>Contact Page</h3>
-<img src="src/assets/contact_page.png" title="Contact Page" width=50% height=50%>></img>
+<img src="public/images/contact_page.png" title="Contact Page" width=50% height=50%>></img>
 Displays a contact form to send messages to PET-SIMC.
 
