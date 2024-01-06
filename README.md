@@ -1,4 +1,4 @@
-#PETSITEv2
+# PETSITEv2
 
 PETSITEv2 it's an app created to show information, members, news, and else about PET-SIMC using [PETAPI](https://github.com/ImNotPETSIMC/PETApi) to retrieve information. 
 
