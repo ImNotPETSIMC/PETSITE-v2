@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#PETSITEv2
 
-## Getting Started
+PETSITEv2 it's an app created to show information, members, news, and else about PET-SIMC using [PETAPI](https://github.com/ImNotPETSIMC/PETApi) to retrieve information. 
 
-First, run the development server:
+-----
+
+# Getting Started
+
+First, run the server:
 
 ```bash
-npm run dev
-# or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-----
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# PETSITEv2
 
-## Learn More
+<h1>Pages:</h1>
 
-To learn more about Next.js, take a look at the following resources:
+<ul>
+    <li>Home Page: Displays introduction information about PET-SIMC and latest news.</li>
+    <li>News Page: Displays all PET-SIMC's registered news.</li>
+    <li>Projects Page: Displays all PET-SIMC's registered projects.</li>
+    <li>Members Page: Displays all PET-SIMC's registered members and ex-members.</li>
+    <li>History Page: Displays a short summary about PET-SIMC's history.</li>
+    <li>About Page: Displays a short summary about PET-SIMC.</li>
+    <li>Contact Page: Displays a contact form to send messages to PET-SIMC.</li>
+</ul>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-----
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<h3>Home Page</h3>
+<img src="public/images/home_page.png" title="Home Page" width=50% height=50%>></img>
+Displays introduction information about PET-SIMC and latest news.
 
-## Deploy on Vercel
+-----
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<h3>News Page</h3>
+<img src="src/assets/news_page.png" title="News Page" width=50% height=50%>></img>
+Displays all PET-SIMC's registered members and ex-members.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+-----
+
+<h3>Projects Page</h3>
+<img src="src/assets/member_page.png" title="Projects Page" width=50% height=50%>></img>
+Displays all PET-SIMC's registered members and ex-members.
+
+-----
+
+<h3>Members Page</h3>
+<img src="src/assets/member_page.png" title="Members Page" width=50% height=50%>></img>
+Displays all PET-SIMC's registered members and ex-members.
+
+-----
+
+<h3>History Page</h3>
+<img src="src/assets/history_page.png" title="History Page" width=50% height=50%>></img>
+Displays a short summary about PET-SIMC's history.
+
+-----
+
+<h3>About Page</h3>
+<img src="src/assets/about_page.png" title="About Page" width=50% height=50%>></img>
+Displays a short summary about PET-SIMC.
+
+-----
+
+<h3>Contact Page</h3>
+<img src="src/assets/contact_page.png" title="Contact Page" width=50% height=50%>></img>
+Displays a contact form to send messages to PET-SIMC.
+
