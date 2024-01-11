@@ -45,13 +45,13 @@ Displays all PET-SIMC's registered members and ex-members.
 -----
 
 <h3>Projects Page</h3>
-<img src="public/images/member_page.png" title="Projects Page" width=50% height=50%>></img>
+<img src="public/images/projects_page.png" title="Projects Page" width=50% height=50%>></img>
 Displays all PET-SIMC's registered members and ex-members.
 
 -----
 
 <h3>Members Page</h3>
-<img src="public/images/member_page.png" title="Members Page" width=50% height=50%>></img>
+<img src="public/images/members_page.png" title="Members Page" width=50% height=50%>></img>
 Displays all PET-SIMC's registered members and ex-members.
 
 -----
